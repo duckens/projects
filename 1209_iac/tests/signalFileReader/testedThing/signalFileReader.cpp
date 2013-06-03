@@ -10,7 +10,6 @@ blockPointer::blockPointer(int fileNumber, qint64 timeStart, qint64 positionInFi
 	this->sizeInBytes = sizeInBytes;
 	this->sizeInMSecs = sizeInMSecs;
 	this->sizeInMeasurments = sizeInMeasurments;
-
 }
 
 
@@ -192,37 +191,6 @@ qint64 signalFileReader::readOuterHeader(QFile* f){
 	dataStream >> res;
 	return res;
 }
-/*
-blockHeader_t* signalFileReader::_readInnerHeader(QFile* f){
-
-	blockHeader_t* blockHeader = new blockHeader_t();
-	
-	do{
-		// qint64 oldPosition = f->pos();
-
-		QDataStream dataStream(f);
-
-		char* str_buffer;
-		dataStream >> blockHeader->t0;
-		dataStream >> str_buffer;
-		for(int i = 0; i < 16; i++){
-			blockHeader->caption[i] = str_buffer[i];
-		}
-		delete[] str_buffer;
-		dataStream >> blockHeader->nBM;
-		dataStream >> blockHeader->aAnt;
-		dataStream >> blockHeader->TypeAnt;
-		dataStream >> blockHeader->DataSize;
-
-		// f->seek(oldPosition);
-
-		return blockHeader;
-
-	} while(0);
-
-	return NULL;
-}
-*/
 
 bool signalFileReader::fileExists(QString filename){
 	QFile f(filename);
@@ -257,13 +225,6 @@ bool signalFileReader::skipToNextBlock(QFile* f){
 qint64 signalFileReader::startTime(){
 	return startTimeGlobal;
 }
-
-// inline void signalFileReader::skipUdpPacketNumber(qFile* f){
-// 	f->seek(f->pos() + UDP_PACKET_NUMBER_SIZE);
-// }
-// inline void signalFileReader::skipUdpPacketSysInfo(qFile* f){
-// 	f->seek(f->pos() + UDP_PACKET_SYSINFO_SIZE);
-// }
 
 int signalFileReader::channelSequently(int i){
 	if(i < 120){

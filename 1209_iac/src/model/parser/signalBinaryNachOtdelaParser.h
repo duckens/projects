@@ -10,7 +10,9 @@ class signalBinaryNachOtdelaParser{
 	public:
 		signalBinaryNachOtdelaParser(std::string filePath, std::string destinationFolderName);
 		~signalBinaryNachOtdelaParser();
+
 		bool parse(std::string filesNameMask, int& gidrophonesAmount, int& signalLength, std::vector<std::string>* fileNames);
+		
 		std::string escapeFileName(std::string path);
 		
 	private:
