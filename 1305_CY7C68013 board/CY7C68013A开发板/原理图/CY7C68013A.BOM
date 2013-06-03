@@ -1,0 +1,26 @@
+Bill of Material for CY7C68013A.SCHDOC
+On 2010/10/7 at 23:11:33
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+                     Key              1    RST                                               
+                     SMD_LED          1    PWR                                               
+                     SW7              1    SW1                                               
+ 0.1uF               0805C           11    C3, C4, C5, C6, C7, C8, C9   Capacitor            
+                                           C10, C11, C12, C13
+ 100K                0805R            1    R2                                                
+ 10K                 0805R            1    R5                                                
+ 10uF                1206             1    C1                           Polarized Capacitor (Radial) 
+ 12pF                0805C            2    C14, C15                     Capacitor            
+ 1K                  0805R            1    R1                                                
+ 1uF                 1206             1    C2                           Polarized Capacitor (Radial) 
+ 2.2K                0805R            2    R3, R4                                            
+ 22uF                1206             1    C17                          Polarized Capacitor (Radial) 
+ 24MHz               XTAL200          1    X1                           Crystal Oscillator   
+ 47uF                1206             1    C16                          Polarized Capacitor (Radial) 
+ AMS1117             SOT-223          1    U2                                                
+ AT24C128            SO-8             1    U3                                                
+ CON2                HEAD2            1    J1                                                
+ CON20               HEAD2X10         2    J2, J3                                            
+ CY7C68013A          SSOP56           1    U1                                                
+ Fuse                Fuse             1    F1                                                

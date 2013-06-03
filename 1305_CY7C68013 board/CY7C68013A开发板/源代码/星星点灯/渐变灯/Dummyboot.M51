@@ -1,0 +1,2275 @@
+BL51 BANKED LINKER/LOCATER V5.12                                                        05/12/2010  22:19:51  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.12, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, .\USBJmpTb.OBJ, dscr.obj, .\EZUSB.LIB, periph.obj, FW.obj TO Dummyboot RAMSIZE (25
+>> 6)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  .\USBJmpTb.OBJ (USBJMPTBL)
+  dscr.obj (DSCR)
+  periph.obj (PERIPH)
+  FW.obj (FW)
+  .\EZUSB.LIB (RESUME)
+  .\EZUSB.LIB (DISCON)
+  .\EZUSB.LIB (DELAY)
+  .\EZUSB.LIB (EZREGS)
+  .\EZUSB.LIB (GET_STRD)
+  .\EZUSB.LIB (SUSP)
+  .\EZUSB.LIB (DELAY1MS)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ULCMP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  Dummyboot (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0017H     UNIT         _DATA_GROUP_
+                    001FH     0001H                  *** GAP ***
+            BIT     0020H.0   0000H.4   UNIT         ?BI?FW
+            BIT     0020H.4   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.5   0000H.3                *** GAP ***
+            DATA    0021H     000EH     UNIT         ?DT?FW
+            DATA    002FH     0002H     UNIT         ?DT?PERIPH
+            IDATA   0031H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+                    0000H     E400H                  *** GAP ***
+            XDATA   E400H     0001H     ABSOLUTE     
+                    E401H     007FH                  *** GAP ***
+            XDATA   E480H     0001H     ABSOLUTE     
+                    E481H     0088H                  *** GAP ***
+            XDATA   E509H     0001H     ABSOLUTE     
+                    E50AH     00F6H                  *** GAP ***
+            XDATA   E600H     0001H     ABSOLUTE     
+            XDATA   E601H     0001H     ABSOLUTE     
+            XDATA   E602H     0001H     ABSOLUTE     
+            XDATA   E603H     0001H     ABSOLUTE     
+            XDATA   E604H     0001H     ABSOLUTE     
+            XDATA   E605H     0001H     ABSOLUTE     
+            XDATA   E606H     0001H     ABSOLUTE     
+            XDATA   E607H     0001H     ABSOLUTE     
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 2
+
+
+            XDATA   E608H     0001H     ABSOLUTE     
+            XDATA   E609H     0001H     ABSOLUTE     
+            XDATA   E60AH     0001H     ABSOLUTE     
+            XDATA   E60BH     0001H     ABSOLUTE     
+            XDATA   E60CH     0001H     ABSOLUTE     
+                    E60DH     0003H                  *** GAP ***
+            XDATA   E610H     0001H     ABSOLUTE     
+            XDATA   E611H     0001H     ABSOLUTE     
+            XDATA   E612H     0001H     ABSOLUTE     
+            XDATA   E613H     0001H     ABSOLUTE     
+            XDATA   E614H     0001H     ABSOLUTE     
+            XDATA   E615H     0001H     ABSOLUTE     
+                    E616H     0002H                  *** GAP ***
+            XDATA   E618H     0001H     ABSOLUTE     
+            XDATA   E619H     0001H     ABSOLUTE     
+            XDATA   E61AH     0001H     ABSOLUTE     
+            XDATA   E61BH     0001H     ABSOLUTE     
+                    E61CH     0004H                  *** GAP ***
+            XDATA   E620H     0001H     ABSOLUTE     
+            XDATA   E621H     0001H     ABSOLUTE     
+            XDATA   E622H     0001H     ABSOLUTE     
+            XDATA   E623H     0001H     ABSOLUTE     
+            XDATA   E624H     0001H     ABSOLUTE     
+            XDATA   E625H     0001H     ABSOLUTE     
+            XDATA   E626H     0001H     ABSOLUTE     
+            XDATA   E627H     0001H     ABSOLUTE     
+            XDATA   E628H     0001H     ABSOLUTE     
+            XDATA   E629H     0001H     ABSOLUTE     
+            XDATA   E62AH     0001H     ABSOLUTE     
+            XDATA   E62BH     0001H     ABSOLUTE     
+            XDATA   E62CH     0001H     ABSOLUTE     
+            XDATA   E62DH     0001H     ABSOLUTE     
+            XDATA   E62EH     0001H     ABSOLUTE     
+            XDATA   E62FH     0001H     ABSOLUTE     
+            XDATA   E630H     0001H     ABSOLUTE     
+            XDATA   E631H     0001H     ABSOLUTE     
+            XDATA   E632H     0001H     ABSOLUTE     
+            XDATA   E633H     0001H     ABSOLUTE     
+            XDATA   E634H     0001H     ABSOLUTE     
+            XDATA   E635H     0001H     ABSOLUTE     
+            XDATA   E636H     0001H     ABSOLUTE     
+            XDATA   E637H     0001H     ABSOLUTE     
+                    E638H     0008H                  *** GAP ***
+            XDATA   E640H     0001H     ABSOLUTE     
+            XDATA   E641H     0001H     ABSOLUTE     
+            XDATA   E642H     0001H     ABSOLUTE     
+            XDATA   E643H     0001H     ABSOLUTE     
+                    E644H     0004H                  *** GAP ***
+            XDATA   E648H     0001H     ABSOLUTE     
+            XDATA   E649H     0001H     ABSOLUTE     
+                    E64AH     0006H                  *** GAP ***
+            XDATA   E650H     0001H     ABSOLUTE     
+            XDATA   E651H     0001H     ABSOLUTE     
+            XDATA   E652H     0001H     ABSOLUTE     
+            XDATA   E653H     0001H     ABSOLUTE     
+            XDATA   E654H     0001H     ABSOLUTE     
+            XDATA   E655H     0001H     ABSOLUTE     
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 3
+
+
+            XDATA   E656H     0001H     ABSOLUTE     
+            XDATA   E657H     0001H     ABSOLUTE     
+            XDATA   E658H     0001H     ABSOLUTE     
+            XDATA   E659H     0001H     ABSOLUTE     
+            XDATA   E65AH     0001H     ABSOLUTE     
+            XDATA   E65BH     0001H     ABSOLUTE     
+            XDATA   E65CH     0001H     ABSOLUTE     
+            XDATA   E65DH     0001H     ABSOLUTE     
+            XDATA   E65EH     0001H     ABSOLUTE     
+            XDATA   E65FH     0001H     ABSOLUTE     
+            XDATA   E660H     0001H     ABSOLUTE     
+            XDATA   E661H     0001H     ABSOLUTE     
+            XDATA   E662H     0001H     ABSOLUTE     
+            XDATA   E663H     0001H     ABSOLUTE     
+            XDATA   E664H     0001H     ABSOLUTE     
+            XDATA   E665H     0001H     ABSOLUTE     
+            XDATA   E666H     0001H     ABSOLUTE     
+            XDATA   E667H     0001H     ABSOLUTE     
+            XDATA   E668H     0001H     ABSOLUTE     
+                    E669H     0007H                  *** GAP ***
+            XDATA   E670H     0001H     ABSOLUTE     
+            XDATA   E671H     0001H     ABSOLUTE     
+            XDATA   E672H     0001H     ABSOLUTE     
+                    E673H     0005H                  *** GAP ***
+            XDATA   E678H     0001H     ABSOLUTE     
+            XDATA   E679H     0001H     ABSOLUTE     
+            XDATA   E67AH     0001H     ABSOLUTE     
+            XDATA   E67BH     0001H     ABSOLUTE     
+            XDATA   E67CH     0001H     ABSOLUTE     
+            XDATA   E67DH     0001H     ABSOLUTE     
+            XDATA   E67EH     0001H     ABSOLUTE     
+            XDATA   E67FH     0001H     ABSOLUTE     
+            XDATA   E680H     0001H     ABSOLUTE     
+            XDATA   E681H     0001H     ABSOLUTE     
+            XDATA   E682H     0001H     ABSOLUTE     
+            XDATA   E683H     0001H     ABSOLUTE     
+            XDATA   E684H     0001H     ABSOLUTE     
+            XDATA   E685H     0001H     ABSOLUTE     
+            XDATA   E686H     0001H     ABSOLUTE     
+            XDATA   E687H     0001H     ABSOLUTE     
+                    E688H     0002H                  *** GAP ***
+            XDATA   E68AH     0001H     ABSOLUTE     
+            XDATA   E68BH     0001H     ABSOLUTE     
+                    E68CH     0001H                  *** GAP ***
+            XDATA   E68DH     0001H     ABSOLUTE     
+                    E68EH     0001H                  *** GAP ***
+            XDATA   E68FH     0001H     ABSOLUTE     
+            XDATA   E690H     0001H     ABSOLUTE     
+            XDATA   E691H     0001H     ABSOLUTE     
+                    E692H     0002H                  *** GAP ***
+            XDATA   E694H     0001H     ABSOLUTE     
+            XDATA   E695H     0001H     ABSOLUTE     
+                    E696H     0002H                  *** GAP ***
+            XDATA   E698H     0001H     ABSOLUTE     
+            XDATA   E699H     0001H     ABSOLUTE     
+                    E69AH     0002H                  *** GAP ***
+            XDATA   E69CH     0001H     ABSOLUTE     
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 4
+
+
+            XDATA   E69DH     0001H     ABSOLUTE     
+                    E69EH     0002H                  *** GAP ***
+            XDATA   E6A0H     0001H     ABSOLUTE     
+            XDATA   E6A1H     0001H     ABSOLUTE     
+            XDATA   E6A2H     0001H     ABSOLUTE     
+            XDATA   E6A3H     0001H     ABSOLUTE     
+            XDATA   E6A4H     0001H     ABSOLUTE     
+            XDATA   E6A5H     0001H     ABSOLUTE     
+            XDATA   E6A6H     0001H     ABSOLUTE     
+            XDATA   E6A7H     0001H     ABSOLUTE     
+            XDATA   E6A8H     0001H     ABSOLUTE     
+            XDATA   E6A9H     0001H     ABSOLUTE     
+            XDATA   E6AAH     0001H     ABSOLUTE     
+            XDATA   E6ABH     0001H     ABSOLUTE     
+            XDATA   E6ACH     0001H     ABSOLUTE     
+            XDATA   E6ADH     0001H     ABSOLUTE     
+            XDATA   E6AEH     0001H     ABSOLUTE     
+            XDATA   E6AFH     0001H     ABSOLUTE     
+            XDATA   E6B0H     0001H     ABSOLUTE     
+            XDATA   E6B1H     0001H     ABSOLUTE     
+            XDATA   E6B2H     0001H     ABSOLUTE     
+            XDATA   E6B3H     0001H     ABSOLUTE     
+            XDATA   E6B4H     0001H     ABSOLUTE     
+            XDATA   E6B5H     0001H     ABSOLUTE     
+                    E6B6H     0002H                  *** GAP ***
+            XDATA   E6B8H     0008H     ABSOLUTE     
+            XDATA   E6C0H     0001H     ABSOLUTE     
+            XDATA   E6C1H     0001H     ABSOLUTE     
+            XDATA   E6C2H     0001H     ABSOLUTE     
+            XDATA   E6C3H     0001H     ABSOLUTE     
+            XDATA   E6C4H     0001H     ABSOLUTE     
+            XDATA   E6C5H     0001H     ABSOLUTE     
+            XDATA   E6C6H     0001H     ABSOLUTE     
+            XDATA   E6C7H     0001H     ABSOLUTE     
+            XDATA   E6C8H     0001H     ABSOLUTE     
+            XDATA   E6C9H     0001H     ABSOLUTE     
+            XDATA   E6CAH     0001H     ABSOLUTE     
+            XDATA   E6CBH     0001H     ABSOLUTE     
+            XDATA   E6CCH     0001H     ABSOLUTE     
+            XDATA   E6CDH     0001H     ABSOLUTE     
+            XDATA   E6CEH     0001H     ABSOLUTE     
+            XDATA   E6CFH     0001H     ABSOLUTE     
+            XDATA   E6D0H     0001H     ABSOLUTE     
+            XDATA   E6D1H     0001H     ABSOLUTE     
+            XDATA   E6D2H     0001H     ABSOLUTE     
+            XDATA   E6D3H     0001H     ABSOLUTE     
+            XDATA   E6D4H     0001H     ABSOLUTE     
+                    E6D5H     0005H                  *** GAP ***
+            XDATA   E6DAH     0001H     ABSOLUTE     
+            XDATA   E6DBH     0001H     ABSOLUTE     
+            XDATA   E6DCH     0001H     ABSOLUTE     
+                    E6DDH     0005H                  *** GAP ***
+            XDATA   E6E2H     0001H     ABSOLUTE     
+            XDATA   E6E3H     0001H     ABSOLUTE     
+            XDATA   E6E4H     0001H     ABSOLUTE     
+                    E6E5H     0005H                  *** GAP ***
+            XDATA   E6EAH     0001H     ABSOLUTE     
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 5
+
+
+            XDATA   E6EBH     0001H     ABSOLUTE     
+            XDATA   E6ECH     0001H     ABSOLUTE     
+                    E6EDH     0003H                  *** GAP ***
+            XDATA   E6F0H     0001H     ABSOLUTE     
+            XDATA   E6F1H     0001H     ABSOLUTE     
+            XDATA   E6F2H     0001H     ABSOLUTE     
+            XDATA   E6F3H     0001H     ABSOLUTE     
+            XDATA   E6F4H     0001H     ABSOLUTE     
+            XDATA   E6F5H     0001H     ABSOLUTE     
+                    E6F6H     0002H                  *** GAP ***
+            XDATA   E6F8H     0001H     ABSOLUTE     
+            XDATA   E6F9H     0001H     ABSOLUTE     
+            XDATA   E6FAH     0001H     ABSOLUTE     
+            XDATA   E6FBH     0001H     ABSOLUTE     
+            XDATA   E6FCH     0001H     ABSOLUTE     
+            XDATA   E6FDH     0001H     ABSOLUTE     
+            XDATA   E6FEH     0001H     ABSOLUTE     
+                    E6FFH     0041H                  *** GAP ***
+            XDATA   E740H     0040H     ABSOLUTE     
+            XDATA   E780H     0040H     ABSOLUTE     
+            XDATA   E7C0H     0040H     ABSOLUTE     
+                    E800H     0800H                  *** GAP ***
+            XDATA   F000H     0400H     ABSOLUTE     
+            XDATA   F400H     0400H     ABSOLUTE     
+            XDATA   F800H     0400H     ABSOLUTE     
+            XDATA   FC00H     0400H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     002FH     UNIT         ?PR?EZUSB_DISCON?DISCON
+            CODE    0032H     0001H     UNIT         ?PR?TD_POLL?PERIPH
+            CODE    0033H     0003H     ABSOLUTE     
+            CODE    0036H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0042H     0001H     UNIT         ?PR?ISR_EP0ACK?PERIPH
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     000AH     UNIT         ?CO?FW
+            CODE    0050H     0002H     UNIT         ?PR?TD_SUSPEND?PERIPH
+            CODE    0052H     0001H     UNIT         ?PR?ISR_STUB?PERIPH
+            CODE    0053H     0003H     ABSOLUTE     
+            CODE    0056H     0275H     UNIT         ?PR?MAIN?FW
+            CODE    02CBH     022CH     UNIT         ?PR?SETUPCOMMAND?FW
+            CODE    04F7H     0008H     UNIT         ?PR?DR_SETCONFIGURATION?PERIPH
+            CODE    04FFH     0001H     UNIT         ?PR?ISR_EP0IN?PERIPH
+            CODE    0500H     00BEH     PAGE         DSCR
+            CODE    05BEH     003DH     UNIT         ?PR?ISR_HIGHSPEED?PERIPH
+            CODE    05FBH     0004H     UNIT         ?PR?RESUME_ISR?FW
+            CODE    05FFH     0001H     UNIT         ?PR?ISR_EP0OUT?PERIPH
+            CODE    0600H     00B8H     PAGE         ?PR?USB_JUMP_TABLE?USBJT
+            CODE    06B8H     0046H     UNIT         ?PR?_EZUSB_DELAY?DELAY
+            CODE    06FEH     0037H     UNIT         ?C?LIB_CODE
+            CODE    0735H     0036H     UNIT         ?PR?ISR_URES?PERIPH
+            CODE    076BH     002CH     UNIT         ?PR?EZUSB_RESUME?RESUME
+            CODE    0797H     002BH     UNIT         ?PR?DR_VENDORCMND?PERIPH
+            CODE    07C2H     002BH     UNIT         ?PR?_EZUSB_GETSTRINGDSCR?GET_STRD
+            CODE    07EDH     0027H     UNIT         ?PR?DR_LED1?PERIPH
+            CODE    0814H     0025H     UNIT         EZUSB
+            CODE    0839H     0020H     UNIT         ?PR?TD_INIT?PERIPH
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 6
+
+
+            CODE    0859H     0018H     UNIT         ?PR?ISR_SUDAV?PERIPH
+            CODE    0871H     0018H     UNIT         ?PR?ISR_SUSP?PERIPH
+            CODE    0889H     0016H     UNIT         ?PR?ISR_SUTOK?PERIPH
+            CODE    089FH     0016H     UNIT         ?PR?ISR_SOF?PERIPH
+            CODE    08B5H     0015H     UNIT         ?PR?HIGHSPEEDCAPABLE?FW
+            CODE    08CAH     0012H     UNIT         ?PR?DR_GETCONFIGURATION?PERIPH
+            CODE    08DCH     0012H     UNIT         ?PR?DR_GETINTERFACE?PERIPH
+            CODE    08EEH     0008H     UNIT         ?PR?DR_SETINTERFACE?PERIPH
+            CODE    08F6H     0002H     UNIT         ?PR?TD_RESUME?PERIPH
+            CODE    08F8H     0002H     UNIT         ?PR?DR_GETDESCRIPTOR?PERIPH
+            CODE    08FAH     0002H     UNIT         ?PR?DR_GETSTATUS?PERIPH
+            CODE    08FCH     0002H     UNIT         ?PR?DR_CLEARFEATURE?PERIPH
+            CODE    08FEH     0002H     UNIT         ?PR?DR_SETFEATURE?PERIPH
+            CODE    0900H     0001H     UNIT         ?PR?ISR_EP1IN?PERIPH
+            CODE    0901H     0001H     UNIT         ?PR?ISR_EP1OUT?PERIPH
+            CODE    0902H     0001H     UNIT         ?PR?ISR_EP2INOUT?PERIPH
+            CODE    0903H     0001H     UNIT         ?PR?ISR_EP4INOUT?PERIPH
+            CODE    0904H     0001H     UNIT         ?PR?ISR_EP6INOUT?PERIPH
+            CODE    0905H     0001H     UNIT         ?PR?ISR_EP8INOUT?PERIPH
+            CODE    0906H     0001H     UNIT         ?PR?ISR_IBN?PERIPH
+            CODE    0907H     0001H     UNIT         ?PR?ISR_EP0PINGNAK?PERIPH
+            CODE    0908H     0001H     UNIT         ?PR?ISR_EP1PINGNAK?PERIPH
+            CODE    0909H     0001H     UNIT         ?PR?ISR_EP2PINGNAK?PERIPH
+            CODE    090AH     0001H     UNIT         ?PR?ISR_EP4PINGNAK?PERIPH
+            CODE    090BH     0001H     UNIT         ?PR?ISR_EP6PINGNAK?PERIPH
+            CODE    090CH     0001H     UNIT         ?PR?ISR_EP8PINGNAK?PERIPH
+            CODE    090DH     0001H     UNIT         ?PR?ISR_ERRORLIMIT?PERIPH
+            CODE    090EH     0001H     UNIT         ?PR?ISR_EP2PIDERROR?PERIPH
+            CODE    090FH     0001H     UNIT         ?PR?ISR_EP4PIDERROR?PERIPH
+            CODE    0910H     0001H     UNIT         ?PR?ISR_EP6PIDERROR?PERIPH
+            CODE    0911H     0001H     UNIT         ?PR?ISR_EP8PIDERROR?PERIPH
+            CODE    0912H     0001H     UNIT         ?PR?ISR_EP2PFLAG?PERIPH
+            CODE    0913H     0001H     UNIT         ?PR?ISR_EP4PFLAG?PERIPH
+            CODE    0914H     0001H     UNIT         ?PR?ISR_EP6PFLAG?PERIPH
+            CODE    0915H     0001H     UNIT         ?PR?ISR_EP8PFLAG?PERIPH
+            CODE    0916H     0001H     UNIT         ?PR?ISR_EP2EFLAG?PERIPH
+            CODE    0917H     0001H     UNIT         ?PR?ISR_EP4EFLAG?PERIPH
+            CODE    0918H     0001H     UNIT         ?PR?ISR_EP6EFLAG?PERIPH
+            CODE    0919H     0001H     UNIT         ?PR?ISR_EP8EFLAG?PERIPH
+            CODE    091AH     0001H     UNIT         ?PR?ISR_EP2FFLAG?PERIPH
+            CODE    091BH     0001H     UNIT         ?PR?ISR_EP4FFLAG?PERIPH
+            CODE    091CH     0001H     UNIT         ?PR?ISR_EP6FFLAG?PERIPH
+            CODE    091DH     0001H     UNIT         ?PR?ISR_EP8FFLAG?PERIPH
+            CODE    091EH     0001H     UNIT         ?PR?ISR_GPIFCOMPLETE?PERIPH
+            CODE    091FH     0001H     UNIT         ?PR?ISR_GPIFWAVEFORM?PERIPH
+
+
+
+OVERLAY MAP OF MODULE:   Dummyboot (?C_STARTUP)
+
+
+SEGMENT                                      BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH     START    LENGTH
+-----------------------------------------------------------------------------
+?C_C51STARTUP                             -----    -----      -----    -----
+  +--> ?PR?MAIN?FW
+
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 7
+
+
+?PR?MAIN?FW                               -----    -----      0008H    0014H
+  +--> ?PR?TD_INIT?PERIPH
+  +--> ?PR?EZUSB_DISCON?DISCON
+  +--> ?PR?TD_POLL?PERIPH
+  +--> ?PR?SETUPCOMMAND?FW
+  +--> ?PR?TD_SUSPEND?PERIPH
+  +--> ?PR?EZUSB_RESUME?RESUME
+  +--> ?PR?TD_RESUME?PERIPH
+  +--> ?PR?_EZUSB_DELAY?DELAY
+
+?PR?TD_INIT?PERIPH                        -----    -----      001CH    0003H
+
+?PR?EZUSB_DISCON?DISCON                   0020H.4  0000H.1    -----    -----
+  +--> ?PR?_EZUSB_DELAY?DELAY
+
+?PR?_EZUSB_DELAY?DELAY                    -----    -----      001CH    0002H
+
+?PR?SETUPCOMMAND?FW                       -----    -----      -----    -----
+  +--> ?PR?DR_GETDESCRIPTOR?PERIPH
+  +--> ?PR?HIGHSPEEDCAPABLE?FW
+  +--> ?PR?_EZUSB_GETSTRINGDSCR?GET_STRD
+  +--> ?PR?DR_GETINTERFACE?PERIPH
+  +--> ?PR?DR_SETINTERFACE?PERIPH
+  +--> ?PR?DR_SETCONFIGURATION?PERIPH
+  +--> ?PR?DR_GETCONFIGURATION?PERIPH
+  +--> ?PR?DR_GETSTATUS?PERIPH
+  +--> ?CO?FW
+  +--> ?PR?DR_CLEARFEATURE?PERIPH
+  +--> ?PR?DR_SETFEATURE?PERIPH
+  +--> ?PR?DR_LED1?PERIPH
+  +--> ?PR?DR_VENDORCMND?PERIPH
+
+?PR?DR_LED1?PERIPH                        -----    -----      -----    -----
+  +--> ?PR?_EZUSB_DELAY?DELAY
+
+?PR?EZUSB_RESUME?RESUME                   -----    -----      -----    -----
+  +--> ?PR?_EZUSB_DELAY?DELAY
+
+*** NEW ROOT ***************************************************
+
+?PR?USB_JUMP_TABLE?USBJT                  -----    -----      -----    -----
+  +--> ?PR?ISR_SUDAV?PERIPH
+  +--> ?PR?ISR_SOF?PERIPH
+  +--> ?PR?ISR_SUTOK?PERIPH
+  +--> ?PR?ISR_SUSP?PERIPH
+  +--> ?PR?ISR_URES?PERIPH
+  +--> ?PR?ISR_HIGHSPEED?PERIPH
+  +--> ?PR?ISR_EP0ACK?PERIPH
+  +--> ?PR?ISR_STUB?PERIPH
+  +--> ?PR?ISR_EP0IN?PERIPH
+  +--> ?PR?ISR_EP0OUT?PERIPH
+  +--> ?PR?ISR_EP1IN?PERIPH
+  +--> ?PR?ISR_EP1OUT?PERIPH
+  +--> ?PR?ISR_EP2INOUT?PERIPH
+  +--> ?PR?ISR_EP4INOUT?PERIPH
+  +--> ?PR?ISR_EP6INOUT?PERIPH
+  +--> ?PR?ISR_EP8INOUT?PERIPH
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 8
+
+
+  +--> ?PR?ISR_IBN?PERIPH
+  +--> ?PR?ISR_EP0PINGNAK?PERIPH
+  +--> ?PR?ISR_EP1PINGNAK?PERIPH
+  +--> ?PR?ISR_EP2PINGNAK?PERIPH
+  +--> ?PR?ISR_EP4PINGNAK?PERIPH
+  +--> ?PR?ISR_EP6PINGNAK?PERIPH
+  +--> ?PR?ISR_EP8PINGNAK?PERIPH
+  +--> ?PR?ISR_ERRORLIMIT?PERIPH
+  +--> ?PR?ISR_EP2PIDERROR?PERIPH
+  +--> ?PR?ISR_EP4PIDERROR?PERIPH
+  +--> ?PR?ISR_EP6PIDERROR?PERIPH
+  +--> ?PR?ISR_EP8PIDERROR?PERIPH
+  +--> ?PR?ISR_EP2PFLAG?PERIPH
+  +--> ?PR?ISR_EP4PFLAG?PERIPH
+  +--> ?PR?ISR_EP6PFLAG?PERIPH
+  +--> ?PR?ISR_EP8PFLAG?PERIPH
+  +--> ?PR?ISR_EP2EFLAG?PERIPH
+  +--> ?PR?ISR_EP4EFLAG?PERIPH
+  +--> ?PR?ISR_EP6EFLAG?PERIPH
+  +--> ?PR?ISR_EP8EFLAG?PERIPH
+  +--> ?PR?ISR_EP2FFLAG?PERIPH
+  +--> ?PR?ISR_EP4FFLAG?PERIPH
+  +--> ?PR?ISR_EP6FFLAG?PERIPH
+  +--> ?PR?ISR_EP8FFLAG?PERIPH
+  +--> ?PR?ISR_GPIFCOMPLETE?PERIPH
+  +--> ?PR?ISR_GPIFWAVEFORM?PERIPH
+
+
+
+SYMBOL TABLE OF MODULE:  Dummyboot (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0036H         SEGMENT       ?C_C51STARTUP
+  I:0031H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0039H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0036H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 9
+
+
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         92
+  C:0036H         LINE#         99
+  C:0038H         LINE#         100
+  C:0039H         LINE#         101
+  C:003AH         LINE#         102
+  C:003CH         LINE#         151
+  C:003FH         LINE#         155
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        USBJMPTBL
+  C:0600H         SEGMENT       ?PR?USB_JUMP_TABLE?USBJT
+  N:0045H         PUBLIC        USB_INT2AUTOVECTOR
+  N:0055H         PUBLIC        USB_INT4AUTOVECTOR
+  C:0600H         PUBLIC        USB_JUMP_TABLE
+  N:0000H         SYMBOL        USBJMPTBL
+  C:0043H         LINE#         49
+  C:0053H         LINE#         53
+  C:0600H         LINE#         61
+  C:0604H         LINE#         63
+  C:0608H         LINE#         65
+  C:060CH         LINE#         67
+  C:0610H         LINE#         69
+  C:0614H         LINE#         71
+  C:0618H         LINE#         73
+  C:061CH         LINE#         75
+  C:0620H         LINE#         77
+  C:0624H         LINE#         79
+  C:0628H         LINE#         81
+  C:062CH         LINE#         83
+  C:0630H         LINE#         85
+  C:0634H         LINE#         87
+  C:0638H         LINE#         89
+  C:063CH         LINE#         91
+  C:0640H         LINE#         93
+  C:0644H         LINE#         95
+  C:0648H         LINE#         97
+  C:064CH         LINE#         99
+  C:0650H         LINE#         101
+  C:0654H         LINE#         103
+  C:0658H         LINE#         105
+  C:065CH         LINE#         107
+  C:0660H         LINE#         109
+  C:0664H         LINE#         111
+  C:0668H         LINE#         113
+  C:066CH         LINE#         115
+  C:0670H         LINE#         117
+  C:0674H         LINE#         119
+  C:0678H         LINE#         121
+  C:067CH         LINE#         123
+  C:0680H         LINE#         126
+  C:0684H         LINE#         128
+  C:0688H         LINE#         130
+  C:068CH         LINE#         132
+  C:0690H         LINE#         134
+  C:0694H         LINE#         136
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 10
+
+
+  C:0698H         LINE#         138
+  C:069CH         LINE#         140
+  C:06A0H         LINE#         142
+  C:06A4H         LINE#         144
+  C:06A8H         LINE#         146
+  C:06ACH         LINE#         148
+  C:06B0H         LINE#         150
+  C:06B4H         LINE#         152
+  -------         ENDMOD        USBJMPTBL
+
+  -------         MODULE        DSCR
+  C:0500H         SEGMENT       DSCR
+  C:0500H         PUBLIC        DEVICEDSCR
+  C:0512H         PUBLIC        DEVICEQUALDSCR
+  C:0558H         PUBLIC        FULLSPEEDCONFIGDSCR
+  C:051CH         PUBLIC        HIGHSPEEDCONFIGDSCR
+  C:0594H         PUBLIC        STRINGDSCR
+  C:05BCH         PUBLIC        USERDSCR
+  N:0002H         SYMBOL        DSCR_CONFIG
+  N:0009H         SYMBOL        DSCR_CONFIG_LEN
+  N:0001H         SYMBOL        DSCR_DEVICE
+  N:0012H         SYMBOL        DSCR_DEVICE_LEN
+  N:0006H         SYMBOL        DSCR_DEVQUAL
+  N:000AH         SYMBOL        DSCR_DEVQUAL_LEN
+  N:0005H         SYMBOL        DSCR_ENDPNT
+  N:0007H         SYMBOL        DSCR_ENDPNT_LEN
+  N:0004H         SYMBOL        DSCR_INTRFC
+  N:0009H         SYMBOL        DSCR_INTRFC_LEN
+  N:0003H         SYMBOL        DSCR_STRING
+  N:0002H         SYMBOL        ET_BULK
+  N:0000H         SYMBOL        ET_CONTROL
+  N:0003H         SYMBOL        ET_INT
+  N:0001H         SYMBOL        ET_ISO
+  C:0594H         SYMBOL        FULLSPEEDCONFIGDSCREND
+  C:0558H         SYMBOL        HIGHSPEEDCONFIGDSCREND
+  C:0594H         SYMBOL        STRINGDSCR0
+  C:0598H         SYMBOL        STRINGDSCR0END
+  C:0598H         SYMBOL        STRINGDSCR1
+  C:05A8H         SYMBOL        STRINGDSCR1END
+  C:05A8H         SYMBOL        STRINGDSCR2
+  C:05BCH         SYMBOL        STRINGDSCR2END
+  -------         ENDMOD        DSCR
+
+  -------         MODULE        PERIPH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:090DH         PUBLIC        ISR_Errorlimit
+  C:04F7H         PUBLIC        DR_SetConfiguration
+  D:002FH         PUBLIC        AlternateSetting
+  C:04FFH         PUBLIC        ISR_Ep0in
+  C:0900H         PUBLIC        ISR_Ep1in
+  C:0839H         PUBLIC        TD_Init
+  C:05FFH         PUBLIC        ISR_Ep0out
+  C:0901H         PUBLIC        ISR_Ep1out
+  C:0032H         PUBLIC        TD_Poll
+  C:091EH         PUBLIC        ISR_GpifComplete
+  C:08FAH         PUBLIC        DR_GetStatus
+  C:0907H         PUBLIC        ISR_Ep0pingnak
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 11
+
+
+  C:0908H         PUBLIC        ISR_Ep1pingnak
+  C:091FH         PUBLIC        ISR_GpifWaveform
+  C:090EH         PUBLIC        ISR_Ep2piderror
+  C:0909H         PUBLIC        ISR_Ep2pingnak
+  C:090FH         PUBLIC        ISR_Ep4piderror
+  C:090AH         PUBLIC        ISR_Ep4pingnak
+  C:0910H         PUBLIC        ISR_Ep6piderror
+  C:090BH         PUBLIC        ISR_Ep6pingnak
+  C:0911H         PUBLIC        ISR_Ep8piderror
+  C:090CH         PUBLIC        ISR_Ep8pingnak
+  D:0091H         PUBLIC        EXIF
+  C:08DCH         PUBLIC        DR_GetInterface
+  C:08FCH         PUBLIC        DR_ClearFeature
+  C:0916H         PUBLIC        ISR_Ep2eflag
+  C:091AH         PUBLIC        ISR_Ep2fflag
+  C:0917H         PUBLIC        ISR_Ep4eflag
+  C:08EEH         PUBLIC        DR_SetInterface
+  C:091BH         PUBLIC        ISR_Ep4fflag
+  C:0918H         PUBLIC        ISR_Ep6eflag
+  C:091CH         PUBLIC        ISR_Ep6fflag
+  C:08F8H         PUBLIC        DR_GetDescriptor
+  C:0919H         PUBLIC        ISR_Ep8eflag
+  C:091DH         PUBLIC        ISR_Ep8fflag
+  C:0912H         PUBLIC        ISR_Ep2pflag
+  C:0913H         PUBLIC        ISR_Ep4pflag
+  C:0914H         PUBLIC        ISR_Ep6pflag
+  C:0915H         PUBLIC        ISR_Ep8pflag
+  C:0859H         PUBLIC        ISR_Sudav
+  D:00B2H         PUBLIC        OEA
+  D:0080H         PUBLIC        IOA
+  D:00B1H         PUBLIC        IOE
+  C:0050H         PUBLIC        TD_Suspend
+  D:0030H         PUBLIC        Configuration
+  C:0042H         PUBLIC        ISR_Ep0ack
+  C:05BEH         PUBLIC        ISR_Highspeed
+  C:0889H         PUBLIC        ISR_Sutok
+  C:0906H         PUBLIC        ISR_Ibn
+  C:0902H         PUBLIC        ISR_Ep2inout
+  C:0903H         PUBLIC        ISR_Ep4inout
+  C:0797H         PUBLIC        DR_VendorCmnd
+  C:08F6H         PUBLIC        TD_Resume
+  C:0904H         PUBLIC        ISR_Ep6inout
+  C:0052H         PUBLIC        ISR_Stub
+  C:0905H         PUBLIC        ISR_Ep8inout
+  C:0735H         PUBLIC        ISR_Ures
+  C:08FEH         PUBLIC        DR_SetFeature
+  C:089FH         PUBLIC        ISR_Sof
+  C:08CAH         PUBLIC        DR_GetConfiguration
+  C:0871H         PUBLIC        ISR_Susp
+  C:07EDH         PUBLIC        DR_LED1
+  -------         PROC          TD_INIT
+  -------         DO            
+  D:001CH         SYMBOL        i
+  D:001EH         SYMBOL        Display
+  -------         ENDDO         
+  C:0839H         LINE#         55
+  C:0839H         LINE#         56
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 12
+
+
+  C:0839H         LINE#         59
+  C:083CH         LINE#         61
+  C:0843H         LINE#         62
+  C:0845H         LINE#         63
+  C:0848H         LINE#         64
+  C:0851H         LINE#         65
+  C:0858H         LINE#         88
+  -------         ENDPROC       TD_INIT
+  -------         PROC          TD_POLL
+  C:0032H         LINE#         90
+  C:0032H         LINE#         91
+  C:0032H         LINE#         93
+  -------         ENDPROC       TD_POLL
+  -------         PROC          TD_SUSPEND
+  C:0050H         LINE#         95
+  C:0050H         LINE#         96
+  C:0050H         LINE#         97
+  C:0051H         LINE#         98
+  -------         ENDPROC       TD_SUSPEND
+  -------         PROC          TD_RESUME
+  C:08F6H         LINE#         100
+  C:08F6H         LINE#         101
+  C:08F6H         LINE#         102
+  C:08F7H         LINE#         103
+  -------         ENDPROC       TD_RESUME
+  -------         PROC          DR_GETDESCRIPTOR
+  C:08F8H         LINE#         110
+  C:08F8H         LINE#         111
+  C:08F8H         LINE#         112
+  C:08F9H         LINE#         113
+  -------         ENDPROC       DR_GETDESCRIPTOR
+  -------         PROC          DR_SETCONFIGURATION
+  C:04F7H         LINE#         115
+  C:04F7H         LINE#         116
+  C:04F7H         LINE#         117
+  C:04FDH         LINE#         118
+  C:04FEH         LINE#         119
+  -------         ENDPROC       DR_SETCONFIGURATION
+  -------         PROC          DR_GETCONFIGURATION
+  C:08CAH         LINE#         121
+  C:08CAH         LINE#         122
+  C:08CAH         LINE#         123
+  C:08D0H         LINE#         124
+  C:08D5H         LINE#         125
+  C:08DAH         LINE#         126
+  C:08DBH         LINE#         127
+  -------         ENDPROC       DR_GETCONFIGURATION
+  -------         PROC          DR_SETINTERFACE
+  C:08EEH         LINE#         129
+  C:08EEH         LINE#         130
+  C:08EEH         LINE#         131
+  C:08F4H         LINE#         132
+  C:08F5H         LINE#         133
+  -------         ENDPROC       DR_SETINTERFACE
+  -------         PROC          DR_GETINTERFACE
+  C:08DCH         LINE#         135
+  C:08DCH         LINE#         136
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 13
+
+
+  C:08DCH         LINE#         137
+  C:08E2H         LINE#         138
+  C:08E7H         LINE#         139
+  C:08ECH         LINE#         140
+  C:08EDH         LINE#         141
+  -------         ENDPROC       DR_GETINTERFACE
+  -------         PROC          DR_GETSTATUS
+  C:08FAH         LINE#         143
+  C:08FAH         LINE#         144
+  C:08FAH         LINE#         145
+  C:08FBH         LINE#         146
+  -------         ENDPROC       DR_GETSTATUS
+  -------         PROC          DR_CLEARFEATURE
+  C:08FCH         LINE#         148
+  C:08FCH         LINE#         149
+  C:08FCH         LINE#         150
+  C:08FDH         LINE#         151
+  -------         ENDPROC       DR_CLEARFEATURE
+  -------         PROC          DR_SETFEATURE
+  C:08FEH         LINE#         153
+  C:08FEH         LINE#         154
+  C:08FEH         LINE#         155
+  C:08FFH         LINE#         156
+  -------         ENDPROC       DR_SETFEATURE
+  -------         PROC          DR_VENDORCMND
+  C:0797H         LINE#         158
+  C:0797H         LINE#         159
+  C:0797H         LINE#         160
+  C:079FH         LINE#         161
+  C:079FH         LINE#         162
+  C:079FH         LINE#         163
+  C:079FH         LINE#         164
+  C:07A2H         LINE#         165
+  C:07A5H         LINE#         166
+  C:07ABH         LINE#         167
+  C:07B0H         LINE#         168
+  C:07B5H         LINE#         169
+  C:07BCH         LINE#         170
+  C:07BEH         LINE#         171
+  C:07BEH         LINE#         172
+  C:07BEH         LINE#         173
+  C:07C0H         LINE#         174
+  C:07C0H         LINE#         175
+  C:07C1H         LINE#         176
+  -------         ENDPROC       DR_VENDORCMND
+  -------         PROC          DR_LED1
+  C:07EDH         LINE#         178
+  C:07EDH         LINE#         179
+  C:07EDH         LINE#         180
+  C:07F3H         LINE#         181
+  C:07F8H         LINE#         182
+  C:07FEH         LINE#         183
+  C:0805H         LINE#         184
+  C:080BH         LINE#         185
+  C:0812H         LINE#         186
+  C:0813H         LINE#         187
+  -------         ENDPROC       DR_LED1
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 14
+
+
+  -------         PROC          ISR_SUDAV
+  C:0859H         LINE#         195
+  C:085FH         LINE#         197
+  C:0861H         LINE#         198
+  C:0864H         LINE#         199
+  C:086AH         LINE#         200
+  -------         ENDPROC       ISR_SUDAV
+  -------         PROC          ISR_SUTOK
+  C:0889H         LINE#         203
+  C:088FH         LINE#         205
+  C:0892H         LINE#         206
+  C:0898H         LINE#         207
+  -------         ENDPROC       ISR_SUTOK
+  -------         PROC          ISR_SOF
+  C:089FH         LINE#         209
+  C:08A5H         LINE#         211
+  C:08A8H         LINE#         212
+  C:08AEH         LINE#         213
+  -------         ENDPROC       ISR_SOF
+  -------         PROC          ISR_URES
+  C:0735H         LINE#         215
+  C:073BH         LINE#         218
+  C:0741H         LINE#         219
+  C:074BH         LINE#         220
+  C:0751H         LINE#         221
+  C:075BH         LINE#         223
+  C:075EH         LINE#         224
+  C:0764H         LINE#         225
+  -------         ENDPROC       ISR_URES
+  -------         PROC          ISR_SUSP
+  C:0871H         LINE#         227
+  C:0877H         LINE#         229
+  C:0879H         LINE#         230
+  C:087CH         LINE#         231
+  C:0882H         LINE#         232
+  -------         ENDPROC       ISR_SUSP
+  -------         PROC          ISR_HIGHSPEED
+  C:05BEH         LINE#         234
+  C:05C4H         LINE#         236
+  C:05CBH         LINE#         237
+  C:05CBH         LINE#         238
+  C:05D1H         LINE#         239
+  C:05DBH         LINE#         240
+  C:05E1H         LINE#         241
+  C:05EBH         LINE#         242
+  C:05EBH         LINE#         244
+  C:05EEH         LINE#         245
+  C:05F4H         LINE#         246
+  -------         ENDPROC       ISR_HIGHSPEED
+  -------         PROC          ISR_EP0ACK
+  C:0042H         LINE#         247
+  C:0042H         LINE#         249
+  -------         ENDPROC       ISR_EP0ACK
+  -------         PROC          ISR_STUB
+  C:0052H         LINE#         250
+  C:0052H         LINE#         252
+  -------         ENDPROC       ISR_STUB
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 15
+
+
+  -------         PROC          ISR_EP0IN
+  C:04FFH         LINE#         253
+  C:04FFH         LINE#         255
+  -------         ENDPROC       ISR_EP0IN
+  -------         PROC          ISR_EP0OUT
+  C:05FFH         LINE#         256
+  C:05FFH         LINE#         258
+  -------         ENDPROC       ISR_EP0OUT
+  -------         PROC          ISR_EP1IN
+  C:0900H         LINE#         259
+  C:0900H         LINE#         261
+  -------         ENDPROC       ISR_EP1IN
+  -------         PROC          ISR_EP1OUT
+  C:0901H         LINE#         262
+  C:0901H         LINE#         264
+  -------         ENDPROC       ISR_EP1OUT
+  -------         PROC          ISR_EP2INOUT
+  C:0902H         LINE#         265
+  C:0902H         LINE#         267
+  -------         ENDPROC       ISR_EP2INOUT
+  -------         PROC          ISR_EP4INOUT
+  C:0903H         LINE#         268
+  C:0903H         LINE#         270
+  -------         ENDPROC       ISR_EP4INOUT
+  -------         PROC          ISR_EP6INOUT
+  C:0904H         LINE#         271
+  C:0904H         LINE#         273
+  -------         ENDPROC       ISR_EP6INOUT
+  -------         PROC          ISR_EP8INOUT
+  C:0905H         LINE#         274
+  C:0905H         LINE#         276
+  -------         ENDPROC       ISR_EP8INOUT
+  -------         PROC          ISR_IBN
+  C:0906H         LINE#         277
+  C:0906H         LINE#         279
+  -------         ENDPROC       ISR_IBN
+  -------         PROC          ISR_EP0PINGNAK
+  C:0907H         LINE#         280
+  C:0907H         LINE#         282
+  -------         ENDPROC       ISR_EP0PINGNAK
+  -------         PROC          ISR_EP1PINGNAK
+  C:0908H         LINE#         283
+  C:0908H         LINE#         285
+  -------         ENDPROC       ISR_EP1PINGNAK
+  -------         PROC          ISR_EP2PINGNAK
+  C:0909H         LINE#         286
+  C:0909H         LINE#         288
+  -------         ENDPROC       ISR_EP2PINGNAK
+  -------         PROC          ISR_EP4PINGNAK
+  C:090AH         LINE#         289
+  C:090AH         LINE#         291
+  -------         ENDPROC       ISR_EP4PINGNAK
+  -------         PROC          ISR_EP6PINGNAK
+  C:090BH         LINE#         292
+  C:090BH         LINE#         294
+  -------         ENDPROC       ISR_EP6PINGNAK
+  -------         PROC          ISR_EP8PINGNAK
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 16
+
+
+  C:090CH         LINE#         295
+  C:090CH         LINE#         297
+  -------         ENDPROC       ISR_EP8PINGNAK
+  -------         PROC          ISR_ERRORLIMIT
+  C:090DH         LINE#         298
+  C:090DH         LINE#         300
+  -------         ENDPROC       ISR_ERRORLIMIT
+  -------         PROC          ISR_EP2PIDERROR
+  C:090EH         LINE#         301
+  C:090EH         LINE#         303
+  -------         ENDPROC       ISR_EP2PIDERROR
+  -------         PROC          ISR_EP4PIDERROR
+  C:090FH         LINE#         304
+  C:090FH         LINE#         306
+  -------         ENDPROC       ISR_EP4PIDERROR
+  -------         PROC          ISR_EP6PIDERROR
+  C:0910H         LINE#         307
+  C:0910H         LINE#         309
+  -------         ENDPROC       ISR_EP6PIDERROR
+  -------         PROC          ISR_EP8PIDERROR
+  C:0911H         LINE#         310
+  C:0911H         LINE#         312
+  -------         ENDPROC       ISR_EP8PIDERROR
+  -------         PROC          ISR_EP2PFLAG
+  C:0912H         LINE#         313
+  C:0912H         LINE#         315
+  -------         ENDPROC       ISR_EP2PFLAG
+  -------         PROC          ISR_EP4PFLAG
+  C:0913H         LINE#         316
+  C:0913H         LINE#         318
+  -------         ENDPROC       ISR_EP4PFLAG
+  -------         PROC          ISR_EP6PFLAG
+  C:0914H         LINE#         319
+  C:0914H         LINE#         321
+  -------         ENDPROC       ISR_EP6PFLAG
+  -------         PROC          ISR_EP8PFLAG
+  C:0915H         LINE#         322
+  C:0915H         LINE#         324
+  -------         ENDPROC       ISR_EP8PFLAG
+  -------         PROC          ISR_EP2EFLAG
+  C:0916H         LINE#         325
+  C:0916H         LINE#         327
+  -------         ENDPROC       ISR_EP2EFLAG
+  -------         PROC          ISR_EP4EFLAG
+  C:0917H         LINE#         328
+  C:0917H         LINE#         330
+  -------         ENDPROC       ISR_EP4EFLAG
+  -------         PROC          ISR_EP6EFLAG
+  C:0918H         LINE#         331
+  C:0918H         LINE#         333
+  -------         ENDPROC       ISR_EP6EFLAG
+  -------         PROC          ISR_EP8EFLAG
+  C:0919H         LINE#         334
+  C:0919H         LINE#         336
+  -------         ENDPROC       ISR_EP8EFLAG
+  -------         PROC          ISR_EP2FFLAG
+  C:091AH         LINE#         337
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 17
+
+
+  C:091AH         LINE#         339
+  -------         ENDPROC       ISR_EP2FFLAG
+  -------         PROC          ISR_EP4FFLAG
+  C:091BH         LINE#         340
+  C:091BH         LINE#         342
+  -------         ENDPROC       ISR_EP4FFLAG
+  -------         PROC          ISR_EP6FFLAG
+  C:091CH         LINE#         343
+  C:091CH         LINE#         345
+  -------         ENDPROC       ISR_EP6FFLAG
+  -------         PROC          ISR_EP8FFLAG
+  C:091DH         LINE#         346
+  C:091DH         LINE#         348
+  -------         ENDPROC       ISR_EP8FFLAG
+  -------         PROC          ISR_GPIFCOMPLETE
+  C:091EH         LINE#         349
+  C:091EH         LINE#         351
+  -------         ENDPROC       ISR_GPIFCOMPLETE
+  -------         PROC          ISR_GPIFWAVEFORM
+  C:091FH         LINE#         352
+  C:091FH         LINE#         354
+  -------         ENDPROC       ISR_GPIFWAVEFORM
+  -------         ENDMOD        PERIPH
+
+  -------         MODULE        FW
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:0020H.0       PUBLIC        Rwuen
+  B:0020H.1       PUBLIC        GotSUD
+  C:0046H         PUBLIC        EPCS_Offset_Lookup_Table
+  C:08B5H         PUBLIC        HighSpeedCapable
+  C:0056H         PUBLIC        main
+  B:00E8H.0       PUBLIC        EUSB
+  C:05FBH         PUBLIC        resume_isr
+  D:0021H         PUBLIC        pHighSpeedConfigDscr
+  D:0023H         PUBLIC        pDeviceDscr
+  C:02CBH         PUBLIC        SetupCommand
+  D:0080H         PUBLIC        IOA
+  D:0025H         PUBLIC        pConfigDscr
+  D:0027H         PUBLIC        pOtherConfigDscr
+  D:0029H         PUBLIC        pFullSpeedConfigDscr
+  B:0020H.2       PUBLIC        Selfpwr
+  D:002BH         PUBLIC        pDeviceQualDscr
+  D:00D8H         PUBLIC        EICON
+  D:008EH         PUBLIC        CKCON
+  D:002DH         PUBLIC        pStringDscr
+  B:0020H.3       PUBLIC        Sleep
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0006H         SYMBOL        offset
+  D:000CH         SYMBOL        DevDescrLen
+  D:0010H         SYMBOL        j
+  D:0014H         SYMBOL        IntDescrAddr
+  D:0016H         SYMBOL        ExtDescrAddr
+  D:0018H         SYMBOL        ii
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 18
+
+
+  C:0056H         LINE#         83
+  C:0056H         LINE#         84
+  C:0056H         LINE#         89
+  C:005FH         LINE#         95
+  C:0061H         LINE#         96
+  C:0063H         LINE#         97
+  C:0065H         LINE#         98
+  C:0067H         LINE#         101
+  C:006AH         LINE#         104
+  C:0072H         LINE#         105
+  C:0078H         LINE#         106
+  C:007EH         LINE#         107
+  C:0084H         LINE#         108
+  C:008AH         LINE#         110
+  C:0092H         LINE#         111
+  C:0092H         LINE#         113
+  C:0098H         LINE#         114
+  C:009CH         LINE#         115
+  C:00B4H         LINE#         116
+  C:00D2H         LINE#         117
+  C:0105H         LINE#         120
+  C:010BH         LINE#         121
+  C:0115H         LINE#         122
+  C:0120H         LINE#         123
+  C:012BH         LINE#         124
+  C:0136H         LINE#         125
+  C:0141H         LINE#         126
+  C:014CH         LINE#         127
+  C:0157H         LINE#         128
+  C:0157H         LINE#         130
+  C:0159H         LINE#         131
+  C:015CH         LINE#         133
+  C:0163H         LINE#         135
+  C:016AH         LINE#         136
+  C:016CH         LINE#         140
+  C:0173H         LINE#         141
+  C:0173H         LINE#         142
+  C:0178H         LINE#         143
+  C:0178H         LINE#         147
+  C:017FH         LINE#         149
+  C:0182H         LINE#         152
+  C:0184H         LINE#         155
+  C:0184H         LINE#         156
+  C:0184H         LINE#         158
+  C:0187H         LINE#         160
+  C:018AH         LINE#         161
+  C:018AH         LINE#         162
+  C:018DH         LINE#         163
+  C:018FH         LINE#         164
+  C:018FH         LINE#         167
+  C:0192H         LINE#         168
+  C:0192H         LINE#         169
+  C:0197H         LINE#         170
+  C:0197H         LINE#         171
+  C:0199H         LINE#         173
+  C:0199H         LINE#         174
+  C:019CH         LINE#         175
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 19
+
+
+  C:019CH         LINE#         176
+  C:01B5H         LINE#         177
+  C:01B8H         LINE#         178
+  C:01BBH         LINE#         179
+  C:01BBH         LINE#         180
+  C:01BBH         LINE#         184
+  C:01D8H         LINE#         185
+  C:01D8H         LINE#         186
+  C:01F6H         LINE#         187
+  C:01F6H         LINE#         188
+  C:01F9H         LINE#         189
+  C:0200H         LINE#         191
+  C:0203H         LINE#         192
+  C:0210H         LINE#         193
+  C:0227H         LINE#         194
+  C:023EH         LINE#         196
+  C:0245H         LINE#         198
+  C:0265H         LINE#         199
+  C:0265H         LINE#         200
+  C:0283H         LINE#         201
+  C:0283H         LINE#         202
+  C:0286H         LINE#         203
+  C:028DH         LINE#         205
+  C:0290H         LINE#         206
+  C:029DH         LINE#         207
+  C:02B4H         LINE#         208
+  -------         ENDPROC       MAIN
+  -------         PROC          HIGHSPEEDCAPABLE
+  C:08B5H         LINE#         213
+  C:08B5H         LINE#         214
+  C:08B5H         LINE#         217
+  C:08BDH         LINE#         218
+  C:08BDH         LINE#         221
+  C:08C4H         LINE#         222
+  C:08C6H         LINE#         224
+  C:08C8H         LINE#         225
+  C:08C8H         LINE#         227
+  C:08C8H         LINE#         229
+  C:08C9H         LINE#         230
+  C:08C9H         LINE#         231
+  -------         ENDPROC       HIGHSPEEDCAPABLE
+  -------         PROC          SETUPCOMMAND
+  -------         DO            
+  D:0001H         SYMBOL        dscr_ptr
+  -------         ENDDO         
+  C:02CBH         LINE#         234
+  C:02CBH         LINE#         235
+  C:02CBH         LINE#         238
+  C:02F1H         LINE#         239
+  C:02F1H         LINE#         240
+  C:02F1H         LINE#         241
+  C:02F9H         LINE#         242
+  C:030FH         LINE#         243
+  C:030FH         LINE#         244
+  C:030FH         LINE#         245
+  C:0315H         LINE#         246
+  C:0317H         LINE#         247
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 20
+
+
+  C:0319H         LINE#         248
+  C:0319H         LINE#         249
+  C:031EH         LINE#         250
+  C:031EH         LINE#         251
+  C:0324H         LINE#         252
+  C:0326H         LINE#         253
+  C:0328H         LINE#         259
+  C:0328H         LINE#         260
+  C:032EH         LINE#         261
+  C:0330H         LINE#         262
+  C:0332H         LINE#         263
+  C:0332H         LINE#         264
+  C:0338H         LINE#         265
+  C:033AH         LINE#         266
+  C:033CH         LINE#         267
+  C:033CH         LINE#         268
+  C:034FH         LINE#         269
+  C:034FH         LINE#         270
+  C:0354H         LINE#         271
+  C:0359H         LINE#         272
+  C:035CH         LINE#         274
+  C:035CH         LINE#         275
+  C:035FH         LINE#         276
+  C:035FH         LINE#         277
+  C:035FH         LINE#         278
+  C:035FH         LINE#         279
+  C:0362H         LINE#         280
+  C:0362H         LINE#         281
+  C:0365H         LINE#         282
+  C:0368H         LINE#         283
+  C:0368H         LINE#         284
+  C:036BH         LINE#         285
+  C:036EH         LINE#         286
+  C:036EH         LINE#         287
+  C:0371H         LINE#         288
+  C:0374H         LINE#         289
+  C:0374H         LINE#         290
+  C:0377H         LINE#         291
+  C:037AH         LINE#         292
+  C:037AH         LINE#         293
+  C:0382H         LINE#         294
+  C:0391H         LINE#         295
+  C:0391H         LINE#         296
+  C:0391H         LINE#         297
+  C:039DH         LINE#         298
+  C:039DH         LINE#         299
+  C:039DH         LINE#         300
+  C:039DH         LINE#         301
+  C:039FH         LINE#         302
+  C:039FH         LINE#         303
+  C:03A4H         LINE#         304
+  C:03A4H         LINE#         305
+  C:03A4H         LINE#         306
+  C:03A4H         LINE#         307
+  C:03A6H         LINE#         308
+  C:03A6H         LINE#         309
+  C:03E4H         LINE#         310
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 21
+
+
+  C:03E7H         LINE#         311
+  C:03EBH         LINE#         312
+  C:03F1H         LINE#         313
+  C:03F4H         LINE#         314
+  C:03F4H         LINE#         315
+  C:03F4H         LINE#         316
+  C:03F4H         LINE#         317
+  C:03F7H         LINE#         318
+  C:03F7H         LINE#         319
+  C:03FFH         LINE#         320
+  C:040EH         LINE#         321
+  C:040EH         LINE#         322
+  C:040EH         LINE#         323
+  C:0415H         LINE#         324
+  C:041AH         LINE#         326
+  C:041AH         LINE#         327
+  C:041DH         LINE#         328
+  C:041DH         LINE#         329
+  C:0423H         LINE#         330
+  C:0423H         LINE#         331
+  C:045EH         LINE#         332
+  C:0476H         LINE#         333
+  C:0478H         LINE#         335
+  C:0478H         LINE#         336
+  C:047AH         LINE#         337
+  C:047AH         LINE#         338
+  C:047AH         LINE#         339
+  C:047AH         LINE#         340
+  C:047FH         LINE#         341
+  C:048BH         LINE#         342
+  C:048BH         LINE#         343
+  C:048BH         LINE#         344
+  C:0492H         LINE#         345
+  C:0496H         LINE#         346
+  C:049EH         LINE#         347
+  C:049EH         LINE#         349
+  C:049EH         LINE#         350
+  C:04A0H         LINE#         351
+  C:04A0H         LINE#         352
+  C:04D7H         LINE#         353
+  C:04D9H         LINE#         354
+  C:04D9H         LINE#         355
+  C:04DCH         LINE#         356
+  C:04DCH         LINE#         357
+  C:04DEH         LINE#         358
+  C:04DEH         LINE#         359
+  C:04E1H         LINE#         360
+  C:04E3H         LINE#         361
+  C:04E3H         LINE#         362
+  C:04E8H         LINE#         363
+  C:04EFH         LINE#         364
+  C:04EFH         LINE#         367
+  C:04F6H         LINE#         368
+  -------         ENDPROC       SETUPCOMMAND
+  -------         PROC          RESUME_ISR
+  C:05FBH         LINE#         371
+  C:05FBH         LINE#         373
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 22
+
+
+  C:05FEH         LINE#         374
+  -------         ENDPROC       RESUME_ISR
+  -------         ENDMOD        FW
+
+  -------         MODULE        RESUME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:076BH         PUBLIC        EZUSB_Resume
+  -------         PROC          EZUSB_RESUME
+  C:076BH         LINE#         38
+  C:076BH         LINE#         39
+  C:076BH         LINE#         40
+  C:0781H         LINE#         42
+  C:0781H         LINE#         43
+  C:0788H         LINE#         44
+  C:078FH         LINE#         45
+  C:0796H         LINE#         46
+  C:0796H         LINE#         47
+  -------         ENDPROC       EZUSB_RESUME
+  -------         ENDMOD        RESUME
+
+  -------         MODULE        DISCON
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0091H         PUBLIC        EXIF
+  C:0003H         PUBLIC        EZUSB_Discon
+  -------         PROC          EZUSB_DISCON
+  B:0020H.4       SYMBOL        renum
+  C:0003H         LINE#         39
+  C:0003H         LINE#         40
+  C:0003H         LINE#         42
+  C:0006H         LINE#         43
+  C:000FH         LINE#         45
+  C:0016H         LINE#         47
+  C:001DH         LINE#         49
+  C:0023H         LINE#         50
+  C:0027H         LINE#         51
+  C:002AH         LINE#         53
+  C:0031H         LINE#         54
+  -------         ENDPROC       EZUSB_DISCON
+  -------         ENDMOD        DISCON
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:06B8H         PUBLIC        _EZUSB_Delay
+  -------         PROC          _EZUSB_DELAY
+  D:001CH         SYMBOL        ms
+  C:06B8H         LINE#         39
+  C:06BCH         LINE#         40
+  C:06BCH         LINE#         46
+  C:06C4H         LINE#         47
+  C:06D6H         LINE#         48
+  C:06E0H         LINE#         49
+  C:06EBH         LINE#         51
+  C:06F8H         LINE#         52
+  C:06FDH         LINE#         53
+  -------         ENDPROC       _EZUSB_DELAY
+  -------         ENDMOD        DELAY
+
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 23
+
+
+  -------         MODULE        EZREGS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  X:E652H         PUBLIC        EP4FIFOIE
+  X:E668H         PUBLIC        INTSETUP
+  X:E600H         PUBLIC        CPUCS
+  X:E654H         PUBLIC        EP6FIFOIE
+  X:E680H         PUBLIC        USBCS
+  X:E65FH         PUBLIC        EPIRQ
+  X:E656H         PUBLIC        EP8FIFOIE
+  X:E6F2H         PUBLIC        XGPIFSGLDATLNOX
+  X:E6C0H         PUBLIC        GPIFWFSELECT
+  X:E6F0H         PUBLIC        XGPIFSGLDATH
+  X:E605H         PUBLIC        BREAKPT
+  X:E609H         PUBLIC        FIFOPINPOLAR
+  X:E640H         PUBLIC        EP2ISOINPKTS
+  X:E678H         PUBLIC        I2CS
+  X:E610H         PUBLIC        EP1OUTCFG
+  X:E6F9H         PUBLIC        TESTCFG
+  X:E641H         PUBLIC        EP4ISOINPKTS
+  X:E68AH         PUBLIC        EP0BCH
+  X:E661H         PUBLIC        GPIFIRQ
+  X:E642H         PUBLIC        EP6ISOINPKTS
+  X:E690H         PUBLIC        EP2BCH
+  X:E643H         PUBLIC        EP8ISOINPKTS
+  X:E694H         PUBLIC        EP4BCH
+  X:E68BH         PUBLIC        EP0BCL
+  X:E612H         PUBLIC        EP2CFG
+  X:E698H         PUBLIC        EP6BCH
+  X:E691H         PUBLIC        EP2BCL
+  X:E613H         PUBLIC        EP4CFG
+  X:E6A7H         PUBLIC        EP2FIFOFLGS
+  X:E69CH         PUBLIC        EP8BCH
+  X:E695H         PUBLIC        EP4BCL
+  X:E628H         PUBLIC        ECCCFG
+  X:E614H         PUBLIC        EP6CFG
+  X:E6A8H         PUBLIC        EP4FIFOFLGS
+  X:E699H         PUBLIC        EP6BCL
+  X:E780H         PUBLIC        EP1OUTBUF
+  X:E67BH         PUBLIC        XAUTODAT1
+  X:E615H         PUBLIC        EP8CFG
+  X:E6A9H         PUBLIC        EP6FIFOFLGS
+  X:E69DH         PUBLIC        EP8BCL
+  X:E67CH         PUBLIC        XAUTODAT2
+  X:E684H         PUBLIC        USBFRAMEH
+  X:E6F5H         PUBLIC        GPIFABORT
+  X:E6AAH         PUBLIC        EP8FIFOFLGS
+  X:E6F8H         PUBLIC        DBUG
+  X:E740H         PUBLIC        EP0BUF
+  X:E6CBH         PUBLIC        FLOWSTB
+  X:E65EH         PUBLIC        EPIE
+  X:E685H         PUBLIC        USBFRAMEL
+  X:E681H         PUBLIC        SUSPEND
+  X:E60CH         PUBLIC        GPIFHOLDAMOUNT
+  X:E6D4H         PUBLIC        EP2GPIFTRIG
+  X:E6C7H         PUBLIC        FLOWLOGIC
+  X:E6DCH         PUBLIC        EP4GPIFTRIG
+  X:E604H         PUBLIC        FIFORESET
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 24
+
+
+  X:E6E4H         PUBLIC        EP6GPIFTRIG
+  X:E6C2H         PUBLIC        GPIFIDLECTL
+  X:E6FAH         PUBLIC        USBTEST
+  X:E6B3H         PUBLIC        SUDPTRH
+  X:E6ECH         PUBLIC        EP8GPIFTRIG
+  X:E6D2H         PUBLIC        EP2GPIFFLGSEL
+  X:E611H         PUBLIC        EP1INCFG
+  X:E6B4H         PUBLIC        SUDPTRL
+  X:E687H         PUBLIC        FNADDR
+  X:E6DAH         PUBLIC        EP4GPIFFLGSEL
+  X:E6D1H         PUBLIC        GPIFTCB0
+  X:E6CDH         PUBLIC        FLOWSTBHPERIOD
+  X:E6D0H         PUBLIC        GPIFTCB1
+  X:E665H         PUBLIC        CLRERRCNT
+  X:E6E2H         PUBLIC        EP6GPIFFLGSEL
+  X:E6CFH         PUBLIC        GPIFTCB2
+  X:E664H         PUBLIC        ERRCNTLIM
+  X:E6CEH         PUBLIC        GPIFTCB3
+  X:E6EAH         PUBLIC        EP8GPIFFLGSEL
+  X:E660H         PUBLIC        GPIFIE
+  X:E67FH         PUBLIC        UDMACRCQUAL
+  X:E400H         PUBLIC        GPIF_WAVE_DATA
+  X:E6CCH         PUBLIC        FLOWSTBEDGE
+  X:E6ABH         PUBLIC        EP2FIFOBCH
+  X:E7C0H         PUBLIC        EP1INBUF
+  X:E6C6H         PUBLIC        FLOWSTATE
+  X:E6ADH         PUBLIC        EP4FIFOBCH
+  X:E6CAH         PUBLIC        FLOWHOLDOFF
+  X:E618H         PUBLIC        EP2FIFOCFG
+  X:E6AFH         PUBLIC        EP6FIFOBCH
+  X:E6ACH         PUBLIC        EP2FIFOBCL
+  X:E619H         PUBLIC        EP4FIFOCFG
+  X:E6B1H         PUBLIC        EP8FIFOBCH
+  X:E6AEH         PUBLIC        EP4FIFOBCL
+  X:E649H         PUBLIC        OUTPKTEND
+  X:E663H         PUBLIC        USBERRIRQ
+  X:E61AH         PUBLIC        EP6FIFOCFG
+  X:E6B0H         PUBLIC        EP6FIFOBCL
+  X:E620H         PUBLIC        EP2AUTOINLENH
+  X:E61BH         PUBLIC        EP8FIFOCFG
+  X:E6B2H         PUBLIC        EP8FIFOBCL
+  X:E68DH         PUBLIC        EP1OUTBC
+  X:E622H         PUBLIC        EP4AUTOINLENH
+  X:E666H         PUBLIC        INT2IVEC
+  X:E659H         PUBLIC        IBNIRQ
+  X:E6FBH         PUBLIC        CT1
+  X:E6C4H         PUBLIC        GPIFADRH
+  X:E65BH         PUBLIC        NAKIRQ
+  X:E624H         PUBLIC        EP6AUTOINLENH
+  X:E621H         PUBLIC        EP2AUTOINLENL
+  X:E601H         PUBLIC        IFCONFIG
+  X:E6FCH         PUBLIC        CT2
+  X:E6B5H         PUBLIC        SUDPTRCTL
+  X:E667H         PUBLIC        INT4IVEC
+  X:E6FDH         PUBLIC        CT3
+  X:E67DH         PUBLIC        UDMACRCH
+  X:E626H         PUBLIC        EP8AUTOINLENH
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 25
+
+
+  X:E623H         PUBLIC        EP4AUTOINLENL
+  X:E6FEH         PUBLIC        CT4
+  X:F000H         PUBLIC        EP2FIFOBUF
+  X:E6C5H         PUBLIC        GPIFADRL
+  X:E625H         PUBLIC        EP6AUTOINLENL
+  X:E630H         PUBLIC        EP2FIFOPFH
+  X:F400H         PUBLIC        EP4FIFOBUF
+  X:E67EH         PUBLIC        UDMACRCL
+  X:E627H         PUBLIC        EP8AUTOINLENL
+  X:E6D3H         PUBLIC        EP2GPIFPFSTOP
+  X:E683H         PUBLIC        TOGCTL
+  X:E632H         PUBLIC        EP4FIFOPFH
+  X:F800H         PUBLIC        EP6FIFOBUF
+  X:E629H         PUBLIC        ECCRESET
+  X:E6DBH         PUBLIC        EP4GPIFPFSTOP
+  X:E634H         PUBLIC        EP6FIFOPFH
+  X:E631H         PUBLIC        EP2FIFOPFL
+  X:FC00H         PUBLIC        EP8FIFOBUF
+  X:E60BH         PUBLIC        REVCTL
+  X:E6E3H         PUBLIC        EP6GPIFPFSTOP
+  X:E636H         PUBLIC        EP8FIFOPFH
+  X:E633H         PUBLIC        EP4FIFOPFL
+  X:E608H         PUBLIC        UART230
+  X:E480H         PUBLIC        RES_WAVEDATA_END
+  X:E6EBH         PUBLIC        EP8GPIFPFSTOP
+  X:E679H         PUBLIC        I2DAT
+  X:E635H         PUBLIC        EP6FIFOPFL
+  X:E6A1H         PUBLIC        EP1OUTCS
+  X:E637H         PUBLIC        EP8FIFOPFL
+  X:E65DH         PUBLIC        USBIRQ
+  X:E670H         PUBLIC        PORTACFG
+  X:E671H         PUBLIC        PORTCCFG
+  X:E651H         PUBLIC        EP2FIFOIRQ
+  X:E602H         PUBLIC        PINFLAGSAB
+  X:E6A0H         PUBLIC        EP0CS
+  X:E6F4H         PUBLIC        GPIFREADYSTAT
+  X:E6C3H         PUBLIC        GPIFCTLCFG
+  X:E672H         PUBLIC        PORTECFG
+  X:E653H         PUBLIC        EP4FIFOIRQ
+  X:E6C1H         PUBLIC        GPIFIDLECS
+  X:E6A3H         PUBLIC        EP2CS
+  X:E509H         PUBLIC        GPCR2
+  X:E67AH         PUBLIC        I2CTL
+  X:E655H         PUBLIC        EP6FIFOIRQ
+  X:E603H         PUBLIC        PINFLAGSCD
+  X:E6A4H         PUBLIC        EP4CS
+  X:E648H         PUBLIC        INPKTEND
+  X:E657H         PUBLIC        EP8FIFOIRQ
+  X:E6A5H         PUBLIC        EP6CS
+  X:E6A6H         PUBLIC        EP8CS
+  X:E68FH         PUBLIC        EP1INBC
+  X:E662H         PUBLIC        USBERRIE
+  X:E6C8H         PUBLIC        FLOWEQ0CTL
+  X:E6C9H         PUBLIC        FLOWEQ1CTL
+  X:E682H         PUBLIC        WAKEUPCS
+  X:E6F1H         PUBLIC        XGPIFSGLDATLX
+  X:E658H         PUBLIC        IBNIE
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 26
+
+
+  X:E686H         PUBLIC        MICROFRAME
+  X:E65AH         PUBLIC        NAKIE
+  X:E6B8H         PUBLIC        SETUPDAT
+  X:E62AH         PUBLIC        ECC1B0
+  X:E62DH         PUBLIC        ECC2B0
+  X:E62BH         PUBLIC        ECC1B1
+  X:E6F3H         PUBLIC        GPIFREADYCFG
+  X:E62EH         PUBLIC        ECC2B1
+  X:E62CH         PUBLIC        ECC1B2
+  X:E62FH         PUBLIC        ECC2B2
+  X:E6A2H         PUBLIC        EP1INCS
+  X:E606H         PUBLIC        BPADDRH
+  X:E65CH         PUBLIC        USBIE
+  X:E60AH         PUBLIC        REVID
+  X:E607H         PUBLIC        BPADDRL
+  X:E650H         PUBLIC        EP2FIFOIE
+  -------         ENDMOD        EZREGS
+
+  -------         MODULE        GET_STRD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:07C2H         PUBLIC        _EZUSB_GetStringDscr
+  -------         PROC          _EZUSB_GETSTRINGDSCR
+  D:0001H         SYMBOL        StrIdx
+  -------         DO            
+  D:0006H         SYMBOL        dscr
+  -------         ENDDO         
+  C:07C2H         LINE#         38
+  C:07C4H         LINE#         39
+  C:07C4H         LINE#         42
+  C:07C8H         LINE#         44
+  C:07D2H         LINE#         45
+  C:07D2H         LINE#         46
+  C:07D8H         LINE#         47
+  C:07D9H         LINE#         48
+  C:07E7H         LINE#         49
+  C:07E9H         LINE#         51
+  C:07ECH         LINE#         52
+  -------         ENDPROC       _EZUSB_GETSTRINGDSCR
+  -------         ENDMOD        GET_STRD
+
+  -------         MODULE        SUSP
+  C:0814H         SEGMENT       EZUSB
+  C:0814H         PUBLIC        EZUSB_SUSP
+  B:00D0H.6       SYMBOL        AC
+  D:00E0H         SYMBOL        ACC
+  D:009AH         SYMBOL        APTR1H
+  D:009BH         SYMBOL        APTR1L
+  D:009AH         SYMBOL        AUTOPTR1H
+  D:009BH         SYMBOL        AUTOPTR1L
+  D:009AH         SYMBOL        AUTOPTRH1
+  D:009DH         SYMBOL        AUTOPTRH2
+  D:009BH         SYMBOL        AUTOPTRL1
+  D:009EH         SYMBOL        AUTOPTRL2
+  D:00AFH         SYMBOL        AUTOPTRSETUP
+  D:00F0H         SYMBOL        B
+  X:E606H         SYMBOL        BPADDRH
+  X:E607H         SYMBOL        BPADDRL
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 27
+
+
+  X:E605H         SYMBOL        BREAKPT
+  D:008EH         SYMBOL        CKCON
+  X:E665H         SYMBOL        CLRERRCNT
+  X:E600H         SYMBOL        CPUCS
+  B:00C8H.0       SYMBOL        CP_RL2
+  X:E6FBH         SYMBOL        CT1
+  X:E6FCH         SYMBOL        CT2
+  X:E6FDH         SYMBOL        CT3
+  X:E6FEH         SYMBOL        CT4
+  B:00D0H.7       SYMBOL        CY
+  B:00C8H.1       SYMBOL        C_T2
+  X:E6F8H         SYMBOL        DBUG
+  D:0083H         SYMBOL        DPH
+  D:0085H         SYMBOL        DPH1
+  D:0082H         SYMBOL        DPL
+  D:0084H         SYMBOL        DPL1
+  D:0086H         SYMBOL        DPS
+  B:00A8H.7       SYMBOL        EA
+  X:E62AH         SYMBOL        ECC1B0
+  X:E62BH         SYMBOL        ECC1B1
+  X:E62CH         SYMBOL        ECC1B2
+  X:E62DH         SYMBOL        ECC2B0
+  X:E62EH         SYMBOL        ECC2B1
+  X:E62FH         SYMBOL        ECC2B2
+  X:E628H         SYMBOL        ECCCFG
+  X:E629H         SYMBOL        ECCRESET
+  B:00E8H.1       SYMBOL        EI2C
+  D:00D8H         SYMBOL        EICON
+  D:00E8H         SYMBOL        EIE
+  B:00E8H.2       SYMBOL        EIEX4
+  B:00E8H.3       SYMBOL        EIEX5
+  B:00E8H.4       SYMBOL        EIEX6
+  D:00F8H         SYMBOL        EIP
+  B:00F8H.2       SYMBOL        EIPX4
+  B:00F8H.3       SYMBOL        EIPX5
+  B:00F8H.4       SYMBOL        EIPX6
+  D:00BAH         SYMBOL        EP01STAT
+  X:E68AH         SYMBOL        EP0BCH
+  X:E68BH         SYMBOL        EP0BCL
+  X:E740H         SYMBOL        EP0BUF
+  X:E6A0H         SYMBOL        EP0CS
+  X:E780H         SYMBOL        EP10UTBUF
+  X:E68FH         SYMBOL        EP1INBC
+  X:E7C0H         SYMBOL        EP1INBUF
+  X:E611H         SYMBOL        EP1INCFG
+  X:E6A2H         SYMBOL        EP1INCS
+  X:E68DH         SYMBOL        EP1OUTBC
+  X:E610H         SYMBOL        EP1OUTCFG
+  X:E6A1H         SYMBOL        EP1OUTCS
+  D:00AAH         SYMBOL        EP2468STAT
+  D:00ABH         SYMBOL        EP24FIFOFLGS
+  X:E620H         SYMBOL        EP2AUTOINLENH
+  X:E621H         SYMBOL        EP2AUTOINLENL
+  X:E690H         SYMBOL        EP2BCH
+  X:E691H         SYMBOL        EP2BCL
+  X:E612H         SYMBOL        EP2CFG
+  X:E6A3H         SYMBOL        EP2CS
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 28
+
+
+  X:E6ABH         SYMBOL        EP2FIFOBCH
+  X:E6ACH         SYMBOL        EP2FIFOBCL
+  X:F000H         SYMBOL        EP2FIFOBUF
+  X:E618H         SYMBOL        EP2FIFOCFG
+  X:E6A7H         SYMBOL        EP2FIFOFLGS
+  X:E650H         SYMBOL        EP2FIFOIE
+  X:E651H         SYMBOL        EP2FIFOIRQ
+  X:E630H         SYMBOL        EP2FIFOPFH
+  X:E631H         SYMBOL        EP2FIFOPFL
+  X:E6D2H         SYMBOL        EP2GPIFFLGSEL
+  X:E6D3H         SYMBOL        EP2GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP2GPIFTCH
+  X:E6D1H         SYMBOL        EP2GPIFTCL
+  X:E6D4H         SYMBOL        EP2GPIFTRIG
+  X:E640H         SYMBOL        EP2ISOINPKTS
+  X:E622H         SYMBOL        EP4AUTOINLENH
+  X:E623H         SYMBOL        EP4AUTOINLENL
+  X:E694H         SYMBOL        EP4BCH
+  X:E695H         SYMBOL        EP4BCL
+  X:E613H         SYMBOL        EP4CFG
+  X:E6A4H         SYMBOL        EP4CS
+  X:E6ADH         SYMBOL        EP4FIFOBCH
+  X:E6AEH         SYMBOL        EP4FIFOBCL
+  X:F400H         SYMBOL        EP4FIFOBUF
+  X:E619H         SYMBOL        EP4FIFOCFG
+  X:E6A8H         SYMBOL        EP4FIFOFLGS
+  X:E652H         SYMBOL        EP4FIFOIE
+  X:E653H         SYMBOL        EP4FIFOIRQ
+  X:E632H         SYMBOL        EP4FIFOPFH
+  X:E633H         SYMBOL        EP4FIFOPFL
+  X:E6DAH         SYMBOL        EP4GPIFFLGSEL
+  X:E6DBH         SYMBOL        EP4GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP4GPIFTCH
+  X:E6D1H         SYMBOL        EP4GPIFTCL
+  X:E6DCH         SYMBOL        EP4GPIFTRIG
+  X:E641H         SYMBOL        EP4ISOINPKTS
+  D:00ACH         SYMBOL        EP68FIFOFLGS
+  X:E624H         SYMBOL        EP6AUTOINLENH
+  X:E625H         SYMBOL        EP6AUTOINLENL
+  X:E698H         SYMBOL        EP6BCH
+  X:E699H         SYMBOL        EP6BCL
+  X:E614H         SYMBOL        EP6CFG
+  X:E6A5H         SYMBOL        EP6CS
+  X:E6AFH         SYMBOL        EP6FIFOBCH
+  X:E6B0H         SYMBOL        EP6FIFOBCL
+  X:F800H         SYMBOL        EP6FIFOBUF
+  X:E61AH         SYMBOL        EP6FIFOCFG
+  X:E6A9H         SYMBOL        EP6FIFOFLGS
+  X:E654H         SYMBOL        EP6FIFOIE
+  X:E655H         SYMBOL        EP6FIFOIRQ
+  X:E634H         SYMBOL        EP6FIFOPFH
+  X:E635H         SYMBOL        EP6FIFOPFL
+  X:E6E2H         SYMBOL        EP6GPIFFLGSEL
+  X:E6E3H         SYMBOL        EP6GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP6GPIFTCH
+  X:E6D1H         SYMBOL        EP6GPIFTCL
+  X:E6E4H         SYMBOL        EP6GPIFTRIG
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 29
+
+
+  X:E642H         SYMBOL        EP6ISOINPKTS
+  X:E626H         SYMBOL        EP8AUTOINLENH
+  X:E627H         SYMBOL        EP8AUTOINLENL
+  X:E69CH         SYMBOL        EP8BCH
+  X:E69DH         SYMBOL        EP8BCL
+  X:E615H         SYMBOL        EP8CFG
+  X:E6A6H         SYMBOL        EP8CS
+  X:E6B1H         SYMBOL        EP8FIFOBCH
+  X:E6B2H         SYMBOL        EP8FIFOBCL
+  X:FC00H         SYMBOL        EP8FIFOBUF
+  X:E61BH         SYMBOL        EP8FIFOCFG
+  X:E6AAH         SYMBOL        EP8FIFOFLGS
+  X:E656H         SYMBOL        EP8FIFOIE
+  X:E657H         SYMBOL        EP8FIFOIRQ
+  X:E636H         SYMBOL        EP8FIFOPFH
+  X:E637H         SYMBOL        EP8FIFOPFL
+  X:E6EAH         SYMBOL        EP8GPIFFLGSEL
+  X:E6EBH         SYMBOL        EP8GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP8GPIFTCH
+  X:E6D1H         SYMBOL        EP8GPIFTCL
+  X:E6ECH         SYMBOL        EP8GPIFTRIG
+  X:E643H         SYMBOL        EP8ISOINPKTS
+  X:E65EH         SYMBOL        EPIE
+  X:E65FH         SYMBOL        EPIRQ
+  B:00D8H.5       SYMBOL        ERESI
+  X:E664H         SYMBOL        ERRCNTLIM
+  C:0827H         SYMBOL        ER_END
+  B:00A8H.4       SYMBOL        ES0
+  B:00A8H.6       SYMBOL        ES1
+  B:00A8H.1       SYMBOL        ET0
+  B:00A8H.3       SYMBOL        ET1
+  B:00A8H.5       SYMBOL        ET2
+  B:00E8H.0       SYMBOL        EUSB
+  B:00A8H.0       SYMBOL        EX0
+  B:00A8H.2       SYMBOL        EX1
+  B:00C8H.3       SYMBOL        EXEN2
+  B:00C8H.6       SYMBOL        EXF2
+  D:0091H         SYMBOL        EXIF
+  X:E67BH         SYMBOL        EXTAUTODAT1
+  X:E67CH         SYMBOL        EXTAUTODAT2
+  B:00D0H.5       SYMBOL        F0
+  X:E609H         SYMBOL        FIFOPINPOLAR
+  X:E604H         SYMBOL        FIFORESET
+  B:00D0H.1       SYMBOL        FL
+  X:E6CCH         SYMBOL        FLOWEDGE
+  X:E6C8H         SYMBOL        FLOWEQ0CTL
+  X:E6C9H         SYMBOL        FLOWEQ1CTL
+  X:E6C7H         SYMBOL        FLOWLOGIC
+  X:E6C6H         SYMBOL        FLOWSTATE
+  X:E6CBH         SYMBOL        FLOWSTB
+  X:E6CDH         SYMBOL        FLOWSTBHPERIOD
+  X:E687H         SYMBOL        FNADDR
+  X:E509H         SYMBOL        GPCR2
+  X:E6F5H         SYMBOL        GPIFABORT
+  X:E6C4H         SYMBOL        GPIFADRH
+  X:E6C5H         SYMBOL        GPIFADRL
+  X:E6C3H         SYMBOL        GPIFCTLCFG
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 30
+
+
+  X:E60CH         SYMBOL        GPIFHOLDAMOUNT
+  X:E6C1H         SYMBOL        GPIFIDLECS
+  X:E6C2H         SYMBOL        GPIFIDLECTL
+  X:E660H         SYMBOL        GPIFIE
+  X:E661H         SYMBOL        GPIFIRQ
+  X:E6F3H         SYMBOL        GPIFREADYCFG
+  X:E6F4H         SYMBOL        GPIFREADYSTAT
+  D:00BDH         SYMBOL        GPIFSGLDATH
+  D:00BFH         SYMBOL        GPIFSGLDATLNOX
+  D:00BEH         SYMBOL        GPIFSGLDATLX
+  X:E6D1H         SYMBOL        GPIFTCB0
+  X:E6D0H         SYMBOL        GPIFTCB1
+  X:E6CFH         SYMBOL        GPIFTCB2
+  X:E6CEH         SYMBOL        GPIFTCB3
+  D:00BBH         SYMBOL        GPIFTRIG
+  X:E6C0H         SYMBOL        GPIFWFSELECT
+  X:E400H         SYMBOL        GPIF_WAVE_DATA
+  X:E678H         SYMBOL        I2CS
+  X:E67AH         SYMBOL        I2CTL
+  X:E679H         SYMBOL        I2DAT
+  X:E658H         SYMBOL        IBNIE
+  X:E659H         SYMBOL        IBNIRQ
+  D:00A8H         SYMBOL        IE
+  B:0088H.1       SYMBOL        IE0
+  B:0088H.3       SYMBOL        IE1
+  X:E601H         SYMBOL        IFCONFIG
+  X:E648H         SYMBOL        INPKTEND
+  D:00A1H         SYMBOL        INT2CLR
+  X:E666H         SYMBOL        INT2IVEC
+  D:00A2H         SYMBOL        INT4CLR
+  X:E667H         SYMBOL        INT4IVEC
+  B:00D8H.3       SYMBOL        INT6
+  X:E668H         SYMBOL        INTSETUP
+  D:0080H         SYMBOL        IOA
+  D:0090H         SYMBOL        IOB
+  D:00A0H         SYMBOL        IOC
+  D:00B0H         SYMBOL        IOD
+  D:00B1H         SYMBOL        IOE
+  D:00B8H         SYMBOL        IP
+  B:0088H.0       SYMBOL        IT0
+  B:0088H.2       SYMBOL        IT1
+  X:E686H         SYMBOL        MICROFRAME
+  D:0092H         SYMBOL        MPAGE
+  X:E65AH         SYMBOL        NAKIE
+  X:E65BH         SYMBOL        NAKIRQ
+  D:00B2H         SYMBOL        OEA
+  D:00B3H         SYMBOL        OEB
+  D:00B4H         SYMBOL        OEC
+  D:00B5H         SYMBOL        OED
+  D:00B6H         SYMBOL        OEE
+  X:E649H         SYMBOL        OUTPKTEND
+  B:00D0H.2       SYMBOL        OV
+  B:00D0H.0       SYMBOL        P
+  D:0087H         SYMBOL        PCON
+  B:00F8H.1       SYMBOL        PI2C
+  X:E602H         SYMBOL        PINFLAGSAB
+  X:E603H         SYMBOL        PINFLAGSCD
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 31
+
+
+  X:E670H         SYMBOL        PORTACFG
+  X:E671H         SYMBOL        PORTCCFG
+  X:E672H         SYMBOL        PORTECFG
+  B:00B8H.4       SYMBOL        PS0
+  B:00B8H.6       SYMBOL        PS1
+  D:00D0H         SYMBOL        PSW
+  B:00B8H.1       SYMBOL        PT0
+  B:00B8H.3       SYMBOL        PT1
+  B:00B8H.5       SYMBOL        PT2
+  B:00F8H.0       SYMBOL        PUSB
+  B:00B8H.0       SYMBOL        PX0
+  B:00B8H.2       SYMBOL        PX1
+  B:0098H.2       SYMBOL        RB8
+  B:00C0H.2       SYMBOL        RB81
+  D:00CBH         SYMBOL        RCAP2H
+  D:00CAH         SYMBOL        RCAP2L
+  B:00C8H.5       SYMBOL        RCLK
+  B:0098H.4       SYMBOL        REN
+  B:00C0H.4       SYMBOL        REN1
+  B:00D8H.4       SYMBOL        RESI
+  X:E480H         SYMBOL        RES_WAVEDATA_END
+  X:E60BH         SYMBOL        REVCTL
+  X:E60AH         SYMBOL        REVID
+  B:0098H.0       SYMBOL        RI
+  B:00C0H.0       SYMBOL        RI1
+  B:00D0H.3       SYMBOL        RS0
+  B:00D0H.4       SYMBOL        RS1
+  D:0099H         SYMBOL        SBUF0
+  D:00C1H         SYMBOL        SBUF1
+  D:0098H         SYMBOL        SCON0
+  D:00C0H         SYMBOL        SCON1
+  B:0080H.6       SYMBOL        SEL
+  X:E6B8H         SYMBOL        SETUPDAT
+  B:0098H.7       SYMBOL        SM0
+  B:00C0H.7       SYMBOL        SM01
+  B:0098H.6       SYMBOL        SM1
+  B:00C0H.6       SYMBOL        SM11
+  B:0098H.5       SYMBOL        SM2
+  B:00C0H.5       SYMBOL        SM21
+  B:00D8H.7       SYMBOL        SMOD1
+  D:0081H         SYMBOL        SP
+  X:E6B5H         SYMBOL        SUDPTRCTL
+  X:E6B3H         SYMBOL        SUDPTRH
+  X:E6B4H         SYMBOL        SUDPTRL
+  N:0000H         SYMBOL        SUSP
+  X:E681H         SYMBOL        SUSPEND
+  D:00C8H         SYMBOL        T2CON
+  B:0098H.3       SYMBOL        TB8
+  B:00C0H.3       SYMBOL        TB81
+  B:00C8H.4       SYMBOL        TCLK
+  D:0088H         SYMBOL        TCON
+  X:E6F9H         SYMBOL        TESTCFG
+  B:0088H.5       SYMBOL        TF0
+  B:0088H.7       SYMBOL        TF1
+  B:00C8H.7       SYMBOL        TF2
+  D:008CH         SYMBOL        TH0
+  D:008DH         SYMBOL        TH1
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 32
+
+
+  D:00CDH         SYMBOL        TH2
+  B:0098H.1       SYMBOL        TI
+  B:00C0H.1       SYMBOL        TI1
+  D:008AH         SYMBOL        TL0
+  D:008BH         SYMBOL        TL1
+  D:00CCH         SYMBOL        TL2
+  D:0089H         SYMBOL        TMOD
+  X:E683H         SYMBOL        TOGCTL
+  B:0088H.4       SYMBOL        TR0
+  B:0088H.6       SYMBOL        TR1
+  B:00C8H.2       SYMBOL        TR2
+  X:E608H         SYMBOL        UART230
+  X:E67DH         SYMBOL        UDMACRCH
+  X:E67EH         SYMBOL        UDMACRCL
+  X:E67FH         SYMBOL        UDMACRCQUAL
+  X:E680H         SYMBOL        USBCS
+  X:E662H         SYMBOL        USBERRIE
+  X:E663H         SYMBOL        USBERRIRQ
+  X:E684H         SYMBOL        USBFRAMEH
+  X:E685H         SYMBOL        USBFRAMEL
+  X:E65CH         SYMBOL        USBIE
+  X:E65DH         SYMBOL        USBIRQ
+  X:E6FAH         SYMBOL        USBTEST
+  X:E682H         SYMBOL        WAKEUPCS
+  X:E6F0H         SYMBOL        XGPIFSGLDATH
+  X:E6F2H         SYMBOL        XGPIFSGLDATLNOX
+  X:E6F1H         SYMBOL        XGPIFSGLDATLX
+  C:0814H         LINE#         22
+  C:0817H         LINE#         23
+  C:0818H         LINE#         24
+  C:081AH         LINE#         25
+  C:081BH         LINE#         27
+  C:081EH         LINE#         28
+  C:081FH         LINE#         30
+  C:0822H         LINE#         32
+  C:0823H         LINE#         33
+  C:0824H         LINE#         34
+  C:0825H         LINE#         35
+  C:0826H         LINE#         36
+  C:0827H         LINE#         37
+  -------         ENDMOD        SUSP
+
+  -------         MODULE        DELAY1MS
+  C:0814H         SEGMENT       EZUSB
+  C:0828H         PUBLIC        EZUSB_DELAY1MS
+  B:00D0H.6       SYMBOL        AC
+  D:00E0H         SYMBOL        ACC
+  D:009AH         SYMBOL        APTR1H
+  D:009BH         SYMBOL        APTR1L
+  D:009AH         SYMBOL        AUTOPTR1H
+  D:009BH         SYMBOL        AUTOPTR1L
+  D:009AH         SYMBOL        AUTOPTRH1
+  D:009DH         SYMBOL        AUTOPTRH2
+  D:009BH         SYMBOL        AUTOPTRL1
+  D:009EH         SYMBOL        AUTOPTRL2
+  D:00AFH         SYMBOL        AUTOPTRSETUP
+  D:00F0H         SYMBOL        B
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 33
+
+
+  X:E606H         SYMBOL        BPADDRH
+  X:E607H         SYMBOL        BPADDRL
+  X:E605H         SYMBOL        BREAKPT
+  D:008EH         SYMBOL        CKCON
+  X:E665H         SYMBOL        CLRERRCNT
+  X:E600H         SYMBOL        CPUCS
+  B:00C8H.0       SYMBOL        CP_RL2
+  X:E6FBH         SYMBOL        CT1
+  X:E6FCH         SYMBOL        CT2
+  X:E6FDH         SYMBOL        CT3
+  X:E6FEH         SYMBOL        CT4
+  B:00D0H.7       SYMBOL        CY
+  B:00C8H.1       SYMBOL        C_T2
+  X:E6F8H         SYMBOL        DBUG
+  N:0000H         SYMBOL        DELAY1MS
+  D:0083H         SYMBOL        DPH
+  D:0085H         SYMBOL        DPH1
+  D:0082H         SYMBOL        DPL
+  D:0084H         SYMBOL        DPL1
+  D:0086H         SYMBOL        DPS
+  B:00A8H.7       SYMBOL        EA
+  X:E62AH         SYMBOL        ECC1B0
+  X:E62BH         SYMBOL        ECC1B1
+  X:E62CH         SYMBOL        ECC1B2
+  X:E62DH         SYMBOL        ECC2B0
+  X:E62EH         SYMBOL        ECC2B1
+  X:E62FH         SYMBOL        ECC2B2
+  X:E628H         SYMBOL        ECCCFG
+  X:E629H         SYMBOL        ECCRESET
+  B:00E8H.1       SYMBOL        EI2C
+  D:00D8H         SYMBOL        EICON
+  D:00E8H         SYMBOL        EIE
+  B:00E8H.2       SYMBOL        EIEX4
+  B:00E8H.3       SYMBOL        EIEX5
+  B:00E8H.4       SYMBOL        EIEX6
+  D:00F8H         SYMBOL        EIP
+  B:00F8H.2       SYMBOL        EIPX4
+  B:00F8H.3       SYMBOL        EIPX5
+  B:00F8H.4       SYMBOL        EIPX6
+  D:00BAH         SYMBOL        EP01STAT
+  X:E68AH         SYMBOL        EP0BCH
+  X:E68BH         SYMBOL        EP0BCL
+  X:E740H         SYMBOL        EP0BUF
+  X:E6A0H         SYMBOL        EP0CS
+  X:E780H         SYMBOL        EP10UTBUF
+  X:E68FH         SYMBOL        EP1INBC
+  X:E7C0H         SYMBOL        EP1INBUF
+  X:E611H         SYMBOL        EP1INCFG
+  X:E6A2H         SYMBOL        EP1INCS
+  X:E68DH         SYMBOL        EP1OUTBC
+  X:E610H         SYMBOL        EP1OUTCFG
+  X:E6A1H         SYMBOL        EP1OUTCS
+  D:00AAH         SYMBOL        EP2468STAT
+  D:00ABH         SYMBOL        EP24FIFOFLGS
+  X:E620H         SYMBOL        EP2AUTOINLENH
+  X:E621H         SYMBOL        EP2AUTOINLENL
+  X:E690H         SYMBOL        EP2BCH
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 34
+
+
+  X:E691H         SYMBOL        EP2BCL
+  X:E612H         SYMBOL        EP2CFG
+  X:E6A3H         SYMBOL        EP2CS
+  X:E6ABH         SYMBOL        EP2FIFOBCH
+  X:E6ACH         SYMBOL        EP2FIFOBCL
+  X:F000H         SYMBOL        EP2FIFOBUF
+  X:E618H         SYMBOL        EP2FIFOCFG
+  X:E6A7H         SYMBOL        EP2FIFOFLGS
+  X:E650H         SYMBOL        EP2FIFOIE
+  X:E651H         SYMBOL        EP2FIFOIRQ
+  X:E630H         SYMBOL        EP2FIFOPFH
+  X:E631H         SYMBOL        EP2FIFOPFL
+  X:E6D2H         SYMBOL        EP2GPIFFLGSEL
+  X:E6D3H         SYMBOL        EP2GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP2GPIFTCH
+  X:E6D1H         SYMBOL        EP2GPIFTCL
+  X:E6D4H         SYMBOL        EP2GPIFTRIG
+  X:E640H         SYMBOL        EP2ISOINPKTS
+  X:E622H         SYMBOL        EP4AUTOINLENH
+  X:E623H         SYMBOL        EP4AUTOINLENL
+  X:E694H         SYMBOL        EP4BCH
+  X:E695H         SYMBOL        EP4BCL
+  X:E613H         SYMBOL        EP4CFG
+  X:E6A4H         SYMBOL        EP4CS
+  X:E6ADH         SYMBOL        EP4FIFOBCH
+  X:E6AEH         SYMBOL        EP4FIFOBCL
+  X:F400H         SYMBOL        EP4FIFOBUF
+  X:E619H         SYMBOL        EP4FIFOCFG
+  X:E6A8H         SYMBOL        EP4FIFOFLGS
+  X:E652H         SYMBOL        EP4FIFOIE
+  X:E653H         SYMBOL        EP4FIFOIRQ
+  X:E632H         SYMBOL        EP4FIFOPFH
+  X:E633H         SYMBOL        EP4FIFOPFL
+  X:E6DAH         SYMBOL        EP4GPIFFLGSEL
+  X:E6DBH         SYMBOL        EP4GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP4GPIFTCH
+  X:E6D1H         SYMBOL        EP4GPIFTCL
+  X:E6DCH         SYMBOL        EP4GPIFTRIG
+  X:E641H         SYMBOL        EP4ISOINPKTS
+  D:00ACH         SYMBOL        EP68FIFOFLGS
+  X:E624H         SYMBOL        EP6AUTOINLENH
+  X:E625H         SYMBOL        EP6AUTOINLENL
+  X:E698H         SYMBOL        EP6BCH
+  X:E699H         SYMBOL        EP6BCL
+  X:E614H         SYMBOL        EP6CFG
+  X:E6A5H         SYMBOL        EP6CS
+  X:E6AFH         SYMBOL        EP6FIFOBCH
+  X:E6B0H         SYMBOL        EP6FIFOBCL
+  X:F800H         SYMBOL        EP6FIFOBUF
+  X:E61AH         SYMBOL        EP6FIFOCFG
+  X:E6A9H         SYMBOL        EP6FIFOFLGS
+  X:E654H         SYMBOL        EP6FIFOIE
+  X:E655H         SYMBOL        EP6FIFOIRQ
+  X:E634H         SYMBOL        EP6FIFOPFH
+  X:E635H         SYMBOL        EP6FIFOPFL
+  X:E6E2H         SYMBOL        EP6GPIFFLGSEL
+  X:E6E3H         SYMBOL        EP6GPIFPFSTOP
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 35
+
+
+  X:E6D0H         SYMBOL        EP6GPIFTCH
+  X:E6D1H         SYMBOL        EP6GPIFTCL
+  X:E6E4H         SYMBOL        EP6GPIFTRIG
+  X:E642H         SYMBOL        EP6ISOINPKTS
+  X:E626H         SYMBOL        EP8AUTOINLENH
+  X:E627H         SYMBOL        EP8AUTOINLENL
+  X:E69CH         SYMBOL        EP8BCH
+  X:E69DH         SYMBOL        EP8BCL
+  X:E615H         SYMBOL        EP8CFG
+  X:E6A6H         SYMBOL        EP8CS
+  X:E6B1H         SYMBOL        EP8FIFOBCH
+  X:E6B2H         SYMBOL        EP8FIFOBCL
+  X:FC00H         SYMBOL        EP8FIFOBUF
+  X:E61BH         SYMBOL        EP8FIFOCFG
+  X:E6AAH         SYMBOL        EP8FIFOFLGS
+  X:E656H         SYMBOL        EP8FIFOIE
+  X:E657H         SYMBOL        EP8FIFOIRQ
+  X:E636H         SYMBOL        EP8FIFOPFH
+  X:E637H         SYMBOL        EP8FIFOPFL
+  X:E6EAH         SYMBOL        EP8GPIFFLGSEL
+  X:E6EBH         SYMBOL        EP8GPIFPFSTOP
+  X:E6D0H         SYMBOL        EP8GPIFTCH
+  X:E6D1H         SYMBOL        EP8GPIFTCL
+  X:E6ECH         SYMBOL        EP8GPIFTRIG
+  X:E643H         SYMBOL        EP8ISOINPKTS
+  X:E65EH         SYMBOL        EPIE
+  X:E65FH         SYMBOL        EPIRQ
+  B:00D8H.5       SYMBOL        ERESI
+  X:E664H         SYMBOL        ERRCNTLIM
+  C:0838H         SYMBOL        ER_END
+  B:00A8H.4       SYMBOL        ES0
+  B:00A8H.6       SYMBOL        ES1
+  B:00A8H.1       SYMBOL        ET0
+  B:00A8H.3       SYMBOL        ET1
+  B:00A8H.5       SYMBOL        ET2
+  B:00E8H.0       SYMBOL        EUSB
+  B:00A8H.0       SYMBOL        EX0
+  B:00A8H.2       SYMBOL        EX1
+  B:00C8H.3       SYMBOL        EXEN2
+  B:00C8H.6       SYMBOL        EXF2
+  D:0091H         SYMBOL        EXIF
+  X:E67BH         SYMBOL        EXTAUTODAT1
+  X:E67CH         SYMBOL        EXTAUTODAT2
+  B:00D0H.5       SYMBOL        F0
+  X:E609H         SYMBOL        FIFOPINPOLAR
+  X:E604H         SYMBOL        FIFORESET
+  B:00D0H.1       SYMBOL        FL
+  X:E6CCH         SYMBOL        FLOWEDGE
+  X:E6C8H         SYMBOL        FLOWEQ0CTL
+  X:E6C9H         SYMBOL        FLOWEQ1CTL
+  X:E6C7H         SYMBOL        FLOWLOGIC
+  X:E6C6H         SYMBOL        FLOWSTATE
+  X:E6CBH         SYMBOL        FLOWSTB
+  X:E6CDH         SYMBOL        FLOWSTBHPERIOD
+  X:E687H         SYMBOL        FNADDR
+  X:E509H         SYMBOL        GPCR2
+  X:E6F5H         SYMBOL        GPIFABORT
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 36
+
+
+  X:E6C4H         SYMBOL        GPIFADRH
+  X:E6C5H         SYMBOL        GPIFADRL
+  X:E6C3H         SYMBOL        GPIFCTLCFG
+  X:E60CH         SYMBOL        GPIFHOLDAMOUNT
+  X:E6C1H         SYMBOL        GPIFIDLECS
+  X:E6C2H         SYMBOL        GPIFIDLECTL
+  X:E660H         SYMBOL        GPIFIE
+  X:E661H         SYMBOL        GPIFIRQ
+  X:E6F3H         SYMBOL        GPIFREADYCFG
+  X:E6F4H         SYMBOL        GPIFREADYSTAT
+  D:00BDH         SYMBOL        GPIFSGLDATH
+  D:00BFH         SYMBOL        GPIFSGLDATLNOX
+  D:00BEH         SYMBOL        GPIFSGLDATLX
+  X:E6D1H         SYMBOL        GPIFTCB0
+  X:E6D0H         SYMBOL        GPIFTCB1
+  X:E6CFH         SYMBOL        GPIFTCB2
+  X:E6CEH         SYMBOL        GPIFTCB3
+  D:00BBH         SYMBOL        GPIFTRIG
+  X:E6C0H         SYMBOL        GPIFWFSELECT
+  X:E400H         SYMBOL        GPIF_WAVE_DATA
+  X:E678H         SYMBOL        I2CS
+  X:E67AH         SYMBOL        I2CTL
+  X:E679H         SYMBOL        I2DAT
+  X:E658H         SYMBOL        IBNIE
+  X:E659H         SYMBOL        IBNIRQ
+  D:00A8H         SYMBOL        IE
+  B:0088H.1       SYMBOL        IE0
+  B:0088H.3       SYMBOL        IE1
+  X:E601H         SYMBOL        IFCONFIG
+  X:E648H         SYMBOL        INPKTEND
+  D:00A1H         SYMBOL        INT2CLR
+  X:E666H         SYMBOL        INT2IVEC
+  D:00A2H         SYMBOL        INT4CLR
+  X:E667H         SYMBOL        INT4IVEC
+  B:00D8H.3       SYMBOL        INT6
+  X:E668H         SYMBOL        INTSETUP
+  D:0080H         SYMBOL        IOA
+  D:0090H         SYMBOL        IOB
+  D:00A0H         SYMBOL        IOC
+  D:00B0H         SYMBOL        IOD
+  D:00B1H         SYMBOL        IOE
+  D:00B8H         SYMBOL        IP
+  B:0088H.0       SYMBOL        IT0
+  B:0088H.2       SYMBOL        IT1
+  C:0831H         SYMBOL        LOOP
+  X:E686H         SYMBOL        MICROFRAME
+  D:0092H         SYMBOL        MPAGE
+  X:E65AH         SYMBOL        NAKIE
+  X:E65BH         SYMBOL        NAKIRQ
+  D:00B2H         SYMBOL        OEA
+  D:00B3H         SYMBOL        OEB
+  D:00B4H         SYMBOL        OEC
+  D:00B5H         SYMBOL        OED
+  D:00B6H         SYMBOL        OEE
+  X:E649H         SYMBOL        OUTPKTEND
+  B:00D0H.2       SYMBOL        OV
+  B:00D0H.0       SYMBOL        P
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 37
+
+
+  D:0087H         SYMBOL        PCON
+  B:00F8H.1       SYMBOL        PI2C
+  X:E602H         SYMBOL        PINFLAGSAB
+  X:E603H         SYMBOL        PINFLAGSCD
+  X:E670H         SYMBOL        PORTACFG
+  X:E671H         SYMBOL        PORTCCFG
+  X:E672H         SYMBOL        PORTECFG
+  B:00B8H.4       SYMBOL        PS0
+  B:00B8H.6       SYMBOL        PS1
+  D:00D0H         SYMBOL        PSW
+  B:00B8H.1       SYMBOL        PT0
+  B:00B8H.3       SYMBOL        PT1
+  B:00B8H.5       SYMBOL        PT2
+  B:00F8H.0       SYMBOL        PUSB
+  B:00B8H.0       SYMBOL        PX0
+  B:00B8H.2       SYMBOL        PX1
+  B:0098H.2       SYMBOL        RB8
+  B:00C0H.2       SYMBOL        RB81
+  D:00CBH         SYMBOL        RCAP2H
+  D:00CAH         SYMBOL        RCAP2L
+  B:00C8H.5       SYMBOL        RCLK
+  B:0098H.4       SYMBOL        REN
+  B:00C0H.4       SYMBOL        REN1
+  B:00D8H.4       SYMBOL        RESI
+  X:E480H         SYMBOL        RES_WAVEDATA_END
+  X:E60BH         SYMBOL        REVCTL
+  X:E60AH         SYMBOL        REVID
+  B:0098H.0       SYMBOL        RI
+  B:00C0H.0       SYMBOL        RI1
+  B:00D0H.3       SYMBOL        RS0
+  B:00D0H.4       SYMBOL        RS1
+  D:0099H         SYMBOL        SBUF0
+  D:00C1H         SYMBOL        SBUF1
+  D:0098H         SYMBOL        SCON0
+  D:00C0H         SYMBOL        SCON1
+  B:0080H.6       SYMBOL        SEL
+  X:E6B8H         SYMBOL        SETUPDAT
+  B:0098H.7       SYMBOL        SM0
+  B:00C0H.7       SYMBOL        SM01
+  B:0098H.6       SYMBOL        SM1
+  B:00C0H.6       SYMBOL        SM11
+  B:0098H.5       SYMBOL        SM2
+  B:00C0H.5       SYMBOL        SM21
+  B:00D8H.7       SYMBOL        SMOD1
+  D:0081H         SYMBOL        SP
+  X:E6B5H         SYMBOL        SUDPTRCTL
+  X:E6B3H         SYMBOL        SUDPTRH
+  X:E6B4H         SYMBOL        SUDPTRL
+  X:E681H         SYMBOL        SUSPEND
+  D:00C8H         SYMBOL        T2CON
+  B:0098H.3       SYMBOL        TB8
+  B:00C0H.3       SYMBOL        TB81
+  B:00C8H.4       SYMBOL        TCLK
+  D:0088H         SYMBOL        TCON
+  X:E6F9H         SYMBOL        TESTCFG
+  B:0088H.5       SYMBOL        TF0
+  B:0088H.7       SYMBOL        TF1
+BL51 BANKED LINKER/LOCATER V5.12                                                      05/12/2010  22:19:51  PAGE 38
+
+
+  B:00C8H.7       SYMBOL        TF2
+  D:008CH         SYMBOL        TH0
+  D:008DH         SYMBOL        TH1
+  D:00CDH         SYMBOL        TH2
+  B:0098H.1       SYMBOL        TI
+  B:00C0H.1       SYMBOL        TI1
+  D:008AH         SYMBOL        TL0
+  D:008BH         SYMBOL        TL1
+  D:00CCH         SYMBOL        TL2
+  D:0089H         SYMBOL        TMOD
+  X:E683H         SYMBOL        TOGCTL
+  B:0088H.4       SYMBOL        TR0
+  B:0088H.6       SYMBOL        TR1
+  B:00C8H.2       SYMBOL        TR2
+  X:E608H         SYMBOL        UART230
+  X:E67DH         SYMBOL        UDMACRCH
+  X:E67EH         SYMBOL        UDMACRCL
+  X:E67FH         SYMBOL        UDMACRCQUAL
+  X:E680H         SYMBOL        USBCS
+  X:E662H         SYMBOL        USBERRIE
+  X:E663H         SYMBOL        USBERRIRQ
+  X:E684H         SYMBOL        USBFRAMEH
+  X:E685H         SYMBOL        USBFRAMEL
+  X:E65CH         SYMBOL        USBIE
+  X:E65DH         SYMBOL        USBIRQ
+  X:E6FAH         SYMBOL        USBTEST
+  X:E682H         SYMBOL        WAKEUPCS
+  X:E6F0H         SYMBOL        XGPIFSGLDATH
+  X:E6F2H         SYMBOL        XGPIFSGLDATLNOX
+  X:E6F1H         SYMBOL        XGPIFSGLDATLX
+  C:0828H         LINE#         48
+  C:082AH         LINE#         49
+  C:082CH         LINE#         50
+  C:082FH         LINE#         51
+  C:0831H         LINE#         53
+  C:0832H         LINE#         54
+  C:0834H         LINE#         55
+  C:0836H         LINE#         56
+  C:0838H         LINE#         58
+  -------         ENDMOD        DELAY1MS
+
+  -------         MODULE        ?C?ULCMP
+  C:06FEH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+  -------         MODULE        ?C?CCASE
+  C:070FH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=48.5 xdata=4473 code=2336
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

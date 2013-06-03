@@ -1,0 +1,8 @@
+"STARTUP.obj",
+".\USBJmpTb.OBJ",
+"dscr.obj",
+".\EZUSB.LIB",
+"periph.obj",
+"FW.obj" 
+TO "Dummyboot" 
+RAMSIZE(256) 

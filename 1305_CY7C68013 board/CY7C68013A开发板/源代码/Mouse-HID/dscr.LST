@@ -1,0 +1,241 @@
+A51 MACRO ASSEMBLER  DSCR                                                                 05/13/2010 07:57:28 PAGE     1
+
+
+MACRO ASSEMBLER A51 V7.10
+OBJECT MODULE PLACED IN dscr.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE dscr.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; dscr.a51
+                       2     ; Contains the Device Descriptor, Configuration(Interface, HID and Endpoint) Descriptor,
+                       3     ; and String descriptors.
+                       4     ;
+                       5     
+                       6     
+  0001                 7     DSCR_DEVICE      equ   1                        ;; Descriptor type: Device
+  0002                 8     DSCR_CONFIG      equ   2                        ;; Descriptor type: Configuration
+  0003                 9     DSCR_STRING      equ   3                        ;; Descriptor type: String
+  0004                10     DSCR_INTRFC      equ   4                        ;; Descriptor type: Interface
+  0005                11     DSCR_ENDPNT      equ   5                        ;; Descriptor type: Endpoint
+  0006                12     DSCR_DEVQUAL     equ   6                        ;; Descriptor type: Device Qualifier
+  0007                13     DSCR_OTHERSPEED  equ   7 
+                      14     
+                      15     
+  0000                16     ET_CONTROL   equ   0                            ;; Endpoint type: Control
+  0001                17     ET_ISO       equ   1                            ;; Endpoint type: Isochronous
+  0002                18     ET_BULK      equ   2                            ;; Endpoint type: Bulk
+  0003                19     ET_INT       equ   3                            ;; Endpoint type: Interrupt
+                      20     
+                      21     public  DeviceDscr,ConfigDscr,StringDscr,HIDDscr,ReportDscr,ReportDscrEnd,StringDscr0, Stri
+                             ngDscr1, StringDscr2
+                      22     public  UserDscr
+                      23      
+                      24     ;EZ USB FX2 control panel Vendor ID 0h, product ID 2131h
+                      25     ; Lakeview Research VID is 0925h.   
+  0925                26     VID     equ     0925h
+  1234                27     PID     equ     1234h
+  0000                28     DID     equ     0000h
+                      29     
+                      30     ;cseg at 0x90
+                      31     DSCR   SEGMENT   CODE PAGE
+                      32     
+                      33     ;;-----------------------------------------------------------------------------
+                      34     ;; Global Variables
+                      35     ;;-----------------------------------------------------------------------------
+----                  36           rseg DSCR      ;; locate the descriptor table in on-part memory.
+                      37     
+0000                  38     DeviceDscr:     
+0000 12               39             db      DeviceDscrEnd - DeviceDscr              ; Descriptor length
+0001 01               40             db      DSCR_DEVICE                     ; Descriptor type = DEVICE
+0002 0001             41             db      00h,01h                         ; spec version (BCD) is 2.00               
+0004 000000           42             db      0,0,0                           ; HID class is defined in the interface des
+                             criptor
+0007 40               43             db      64                              ; maxPacketSize
+0008 2509             44             db      LOW(VID),HIGH(VID)
+000A 3412             45             db      LOW(PID),HIGH(PID)
+000C 0000             46             db      LOW(DID),HIGH(DID)
+000E 00               47             db       0                              ; Manufacturer string index
+000F 00               48             db       0                              ; Product string index
+0010 00               49             db       0                              ; Serial number string index
+0011 01               50             db       1                              ; Number of configurations
+0012                  51     DeviceDscrEnd:
+                      52     
+                      53     
+                      54     
+0012                  55     ConfigDscr:
+0012 09               56             db      ConfigDscrEnd - ConfigDscr              ; Descriptor length
+A51 MACRO ASSEMBLER  DSCR                                                                 05/13/2010 07:57:28 PAGE     2
+
+0013 02               57             db      DSCR_CONFIG                     ; Descriptor type = OTHER SPEED CONFIG
+0014 22               58             db      LOW(word_allignment-ConfigDscr) ; Total length (conf+interface+HID+EP's)
+0015 00               59             db      HIGH(word_allignment-ConfigDscr)
+0016 01               60             db      01h                             ; Number of interfaces
+0017 01               61             db      01h                             ; Value to select this interface
+0018 00               62             db      00h                             ; String index to describe this config
+0019 A0               63             db      10100000b                       ; b7=1; b6=self-powered; b5=Remote WU
+001A 00               64             db      0d                              ; bus power = 80 ma
+001B                  65     ConfigDscrEnd:
+                      66      
+001B                  67     HIDIntrfcDscr:                          ; Interface Descriptor
+001B 09               68             db      HIDIntrfcDscrEnd -HIDIntrfcDscr ; Descriptor length
+001C 04               69             db      DSCR_INTRFC                     ; Descriptor type: INTERFACE
+001D 0000             70             db      0,0                             ; Interface 0, Alternate setting 0
+001F 01               71             db      01h                             ; Number of endpoints
+0020 030102           72             db      03h,01,02                       ; Class(03)HID, Boot Interface sub class In
+                             terface sub sub class (Mouse)
+0023 00               73             db      0h                              ; string index for this interface
+0024                  74     HIDIntrfcDscrEnd:
+                      75     
+                      76     
+0024                  77     HIDDscr:
+0024 09               78             db      HIDDscrEnd -HIDDscr     ; Descriptor length
+0025 21               79             db      21h                             ; Descriptor type - HID
+0026 1001             80             db      10h,01h                         ; HID Spec version 1.10
+0028 00               81             db      0                               ; country code(none)
+0029 01               82             db      01h                             ; number of HID class descriptors
+002A 22               83             db      22h                             ; class descriptor type: REPORT
+002B 34               84             db      LOW(ReportDscrEnd - ReportDscr)
+002C 00               85             db      HIGH(ReportDscrEnd - ReportDscr)
+002D                  86     HIDDscrEnd:
+                      87     
+002D                  88     HIDEpInDscr:    
+002D 07               89             db      HIDEpInDscrEnd -HIDEpInDscr     ; Descriptor length
+002E 05               90             db      DSCR_ENDPNT                     ; Descriptor type : ENDPOINT
+002F 81               91             db      81h                             ; IN-1
+0030 03               92             db      ET_INT                          ; Type: INTERRUPT
+0031 4000             93             db      40h,0                           ; maxPacketSize = 64
+0033 01               94             db      01h                             ; polling interval is 50 msec
+0034                  95     HIDEpInDscrEnd:
+                      96     
+                      97     
+0034                  98     word_allignment:
+                      99     
+0034 00              100             db  00h         ;Word alignment
+                     101     
+                     102     ;; usbhidio code start
+0035                 103     ReportDscr:
+0035 0501            104             db 05h, 01h     ;       Usage Page (Generic Desktop),
+0037 0902            105             db 09h, 02h     ;       Usage (Mouse),
+0039 A101            106             db 0A1h, 01h    ;       Collection (Application),
+003B 0901            107             db 09h, 01h     ;           Usage (Pointer), 
+003D A100            108             db 0A1h, 00h    ;           Collection (Physical),
+003F 9503            109             db 95h, 03h     ;               Report Count (3),
+0041 7501            110             db 75h, 01h     ;               Report Size (1),
+0043 0509            111             db 05h, 09h     ;               Usage Page (Buttons),
+0045 1901            112             db 19h, 01h     ;               Usage minimum (1)
+0047 2903            113             db 29h, 03h     ;               Usage maximum (3)
+0049 1500            114             db 15h, 00h     ;               Logical minimum (0),
+004B 2501            115             db 25h, 01h     ;               Logical maximum (1),    
+004D 8102            116             db 81h, 02h     ;               Input (Data, Variable, Absolute), (3 button bits)
+004F 9501            117             db 95h, 01h     ;               Report Count (1),
+0051 7505            118             db 75h, 05h     ;               Report Size (5),
+0053 8101            119             db 81h, 01h     ;               Input (Constant)
+0055 7508            120             db 75h, 08h     ;               Report Size (8)
+0057 9502            121             db 95h, 02h     ;               Report Count (2)              
+A51 MACRO ASSEMBLER  DSCR                                                                 05/13/2010 07:57:28 PAGE     3
+
+0059 0501            122             db 05h, 01h     ;               Usage Page (Generic Desktop),
+005B 0930            123             db 09h, 30h     ;               Usage (X),
+005D 0931            124             db 09h, 31h     ;               Usage (Y),
+005F 160180          125             db 16h, 01h,80h     ;               Logical Minimum (-127),
+0062 26FF7F          126             db 26h, 0ffh,7Fh     ;               Logical Maximum (+127),    
+0065 8106            127             db 81h, 06h     ;               Input (Data, Variable, Relative), (2 position bytes
+                              - X & Y)
+0067 C0              128             db 0C0h         ;            End Collection
+0068 C0              129             db 0C0h         ;        End Collection
+0069                 130     ReportDscrEnd:
+                     131     
+0069                 132     ReportEnd_word_allignment:
+                     133     ;; Alignment unneeded for usbhidio report because it has an even number of bytes.
+                     134       ;;    db  00h         ;Force word alignment
+                     135     
+                     136     
+                     137     
+0069                 138     StringDscr:
+0069                 139     StringDscr0:
+0069 04              140                     db      StringDscr0End-StringDscr0              ;; String descriptor length
+006A 03              141                     db      DSCR_STRING
+006B 0904            142                     db      09H,04H
+006D                 143     StringDscr0End:
+                     144     
+006D                 145     StringDscr1:    
+006D 10              146                     db      StringDscr1End-StringDscr1              ;; String descriptor length
+006E 03              147                     db      DSCR_STRING
+006F 4300            148                     db      'C',00
+0071 7900            149                     db      'y',00
+0073 7000            150                     db      'p',00
+0075 7200            151                     db      'r',00
+0077 6500            152                     db      'e',00
+0079 7300            153                     db      's',00
+007B 7300            154                     db      's',00
+007D                 155     StringDscr1End:
+                     156     
+007D                 157     StringDscr2:    
+007D 12              158                     db      StringDscr2End-StringDscr2              ;; Descriptor length
+007E 03              159                     db      DSCR_STRING
+007F 4500            160                     db      'E',00
+0081 5A00            161                     db      'Z',00
+0083 2D00            162                     db      '-',00
+0085 4D00            163                     db      'M',00
+0087 6F00            164                     db      'o',00
+0089 7500            165                     db      'u',00
+008B 7300            166                     db      's',00
+008D 6500            167                     db      'e',00
+008F                 168     StringDscr2End:
+                     169     
+008F                 170     UserDscr:               
+008F 0000            171                     dw      0000H
+                     172                     end
+                             
+A51 MACRO ASSEMBLER  DSCR                                                                 05/13/2010 07:57:28 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E                    T Y P E  V A L U E   ATTRIBUTES
+
+CONFIGDSCR. . . . . . . .  C ADDR   0012H   R   SEG=DSCR
+CONFIGDSCREND . . . . . .  C ADDR   001BH   R   SEG=DSCR
+DEVICEDSCR. . . . . . . .  C ADDR   0000H   R   SEG=DSCR
+DEVICEDSCREND . . . . . .  C ADDR   0012H   R   SEG=DSCR
+DID . . . . . . . . . . .  N NUMB   0000H   A   
+DSCR. . . . . . . . . . .  C SEG    0091H       REL=PAGE
+DSCR_CONFIG . . . . . . .  N NUMB   0002H   A   
+DSCR_DEVICE . . . . . . .  N NUMB   0001H   A   
+DSCR_DEVQUAL. . . . . . .  N NUMB   0006H   A   
+DSCR_ENDPNT . . . . . . .  N NUMB   0005H   A   
+DSCR_INTRFC . . . . . . .  N NUMB   0004H   A   
+DSCR_OTHERSPEED . . . . .  N NUMB   0007H   A   
+DSCR_STRING . . . . . . .  N NUMB   0003H   A   
+ET_BULK . . . . . . . . .  N NUMB   0002H   A   
+ET_CONTROL. . . . . . . .  N NUMB   0000H   A   
+ET_INT. . . . . . . . . .  N NUMB   0003H   A   
+ET_ISO. . . . . . . . . .  N NUMB   0001H   A   
+HIDDSCR . . . . . . . . .  C ADDR   0024H   R   SEG=DSCR
+HIDDSCREND. . . . . . . .  C ADDR   002DH   R   SEG=DSCR
+HIDEPINDSCR . . . . . . .  C ADDR   002DH   R   SEG=DSCR
+HIDEPINDSCREND. . . . . .  C ADDR   0034H   R   SEG=DSCR
+HIDINTRFCDSCR . . . . . .  C ADDR   001BH   R   SEG=DSCR
+HIDINTRFCDSCREND. . . . .  C ADDR   0024H   R   SEG=DSCR
+PID . . . . . . . . . . .  N NUMB   1234H   A   
+REPORTDSCR. . . . . . . .  C ADDR   0035H   R   SEG=DSCR
+REPORTDSCREND . . . . . .  C ADDR   0069H   R   SEG=DSCR
+REPORTEND_WORD_ALLIGNMENT  C ADDR   0069H   R   SEG=DSCR
+STRINGDSCR. . . . . . . .  C ADDR   0069H   R   SEG=DSCR
+STRINGDSCR0 . . . . . . .  C ADDR   0069H   R   SEG=DSCR
+STRINGDSCR0END. . . . . .  C ADDR   006DH   R   SEG=DSCR
+STRINGDSCR1 . . . . . . .  C ADDR   006DH   R   SEG=DSCR
+STRINGDSCR1END. . . . . .  C ADDR   007DH   R   SEG=DSCR
+STRINGDSCR2 . . . . . . .  C ADDR   007DH   R   SEG=DSCR
+STRINGDSCR2END. . . . . .  C ADDR   008FH   R   SEG=DSCR
+USERDSCR. . . . . . . . .  C ADDR   008FH   R   SEG=DSCR
+VID . . . . . . . . . . .  N NUMB   0925H   A   
+WORD_ALLIGNMENT . . . . .  C ADDR   0034H   R   SEG=DSCR
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
