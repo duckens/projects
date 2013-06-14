@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>809</width>
+    <height>564</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QwtPlot" name="qwtPlot">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>641</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_openFile">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>370</y>
+      <width>87</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>open file</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_filename">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>370</y>
+      <width>241</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_fileName">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>374</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>file name:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_getData">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>410</y>
+      <width>87</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>get data</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_borderLow">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>415</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>L:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_borderHigh">
+    <property name="geometry">
+     <rect>
+      <x>315</x>
+      <y>416</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>R:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_borderLow">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>411</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_borderHigh">
+    <property name="geometry">
+     <rect>
+      <x>339</x>
+      <y>411</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>809</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
